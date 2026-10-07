@@ -27,12 +27,13 @@ For example, 1202 is anchored at `(58.4182, 223.729)` and 1208 at
 range-label coordinates. Original glyph contours and their rotated/multiline
 orientations are retained.
 
-The floor SVG scales and pans normally. `AnnotationLayer.tsx` projects these
-anchors using the **same fitted camera, zoom and pan**, but scales glyphs
+The floor SVG scales, pans and rotates. `AnnotationLayer.tsx` projects these
+anchors using the **same fitted camera, zoom, pan and rotation**, but scales glyphs
 separately. Room glyph heights are 10–12 logical screen pixels, independent of
 pinch zoom. Area-name glyphs stay within 10–14 pixels per line, including the
 existing multiline names. At 8×, labels remain relatively small
-inside enlarged rooms instead of becoming 8× larger.
+inside enlarged rooms instead of becoming 8× larger. Label contours and local
+offsets rotate with the floor; they are not counter-rotated to stay upright.
 
 `annotationLayout.ts` computes three stable layouts only when the viewport
 changes. Source wall spans constrain local offsets to the room's surrounding
@@ -59,9 +60,13 @@ At a crossing, a 140 ms opacity fade settles to the new discrete state; fades
 are time-based, never proportional to every small zoom change. Layouts are
 checked at the lower hysteresis limits so zooming out within a level is safe.
 
-The annotation overlay updates its small affine transforms on the UI thread;
-pan uses one parent SVG group so previously offscreen labels can pan into view
-without premature viewport clipping. The floor's LOD opacity changes only on
+The annotation overlay updates its small affine transforms on the UI thread.
+Pan and rotation use one parent SVG group around the viewport center so labels
+can move into view without premature viewport clipping. Individual annotation
+worklets do not capture pan or rotation shared values. Zoom uses one derived map
+scale and direct glyph matrices, avoiding a temporary projected point per label.
+Hidden glyphs emit opacity alone instead of unused transforms (their worklets
+still subscribe to zoom through their static closure). The floor's LOD opacity changes only on
 level transitions, avoiding expensive per-frame floor-SVG invalidation. No
 React state updates or XML parsing occur during gestures. No libraries were
 added for this refinement.
@@ -73,19 +78,47 @@ session from an older version, restart it once with `npx expo start --clear`.
 
 ## Interaction and checks
 
-One finger pans; two fingers zoom and pan about their moving focal point.
-Zoom is limited to 1–8×, and translation is constrained to map edges. When a
-scaled axis is smaller than the viewport, it stays centered. At these bounds,
-keeping the map reachable takes precedence over focal anchoring. Reset view
-animates back to the overview. Viewport resizing refits the map.
+One finger pans; two fingers simultaneously zoom, rotate and translate about
+their moving focal point. A memoized `Gesture.Manual()` processes a single touch
+stream on the UI thread instead of letting separate recognizers overwrite the
+same camera. Its attached viewport does not transform, so local touch coordinates
+remain stable. Pair order follows pointer IDs, not array order. Pointer changes
+rebase without moving the camera; three or more fingers pause movement. The last
+touch-up explicitly ends the manual gesture; cancellation clears its baseline.
+
+Zoom is limited to 1–8×. Rotation is continuous through multiple full turns,
+without snapping. Translation is constrained to the rotated map's bounding
+extents; empty space at rotated corners is expected. When a rotated/scaled axis
+is smaller than the viewport, it stays centered. At these bounds, keeping the
+map reachable takes precedence over focal anchoring. Incremental rebasing makes
+reversing at a zoom/pan bound respond immediately. Nearly coincident fingers are
+rebased rather than divided by a tiny distance.
+
+Reset view animates back to 1× zoom, 0° rotation, and centered translation over
+250 ms, taking the shortest rotation path. Touches interrupt the reset. Viewport
+resizing refits the map and returns to the original orientation.
 
 Run `node --test tests/map.test.cjs` (Node 22.18+ for TypeScript stripping),
 `npx expo lint`, and `npx tsc --noEmit`.
 Platform bundling can be checked with `npx expo export --platform ios` and
 `npx expo export --platform android`.
-On iOS and Android devices, check off-center pinch, two-finger translation,
-one/two/three-finger transitions, pan limits, reset during a zoom, and discrete
-levels in both directions. Verify that labels coming from outside the viewport
-appear while panning. Automated tests cover original glyph/wall preservation,
-the requested room anchors, stable bounded sizing, collisions, camera movement
-and hysteresis. Device smoothness still needs physical testing.
+On iOS and Android devices, check off-center pinch/twist, combined translation,
+multiple full turns, one/two/three-finger transitions, cancellation, rotated pan
+limits, reset during a gesture, interrupting reset, viewport resize, and discrete
+levels in both directions. Verify labels entering from outside the viewport
+appear while panning/rotating and glyphs remain aligned at 1×/2×/4×/8×.
+
+The 17 automated tests cover original glyph/wall preservation, room anchors,
+bounded sizing/collisions, combined focal anchoring, 2,500 gesture updates,
+rotation seams, rotated bounds and hysteresis. Compiled callback tests simulate
+reset/cancel/finger transitions. A hook harness checks static worklet-closure
+dependencies: pan/rotation update the annotation parent only; zoom projects label
+positions without rerunning layouts. These checks do not measure native drawing
+cost, animation timing, or FPS.
+
+Physical performance profiling is still required. Record model/OS, app revision,
+build mode and display refresh rate. Compare identical 10-second pan,
+pinch/twist/translation and LOD-crossing sequences before/after the change in
+development and optimized/release builds, capturing UI/JS frame times and dropped
+frames. Start on the affected Android phone, then check iOS. The reported stutter
+has not been verified as resolved, and no native bottleneck has been confirmed.

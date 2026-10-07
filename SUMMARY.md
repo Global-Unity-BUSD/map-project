@@ -1,5 +1,28 @@
 # Map Work Summary
 
+## 2026-10-07 — Two-finger rotation and gesture-path optimization
+
+* **Implemented:** Continuous two-finger rotation combined with pinch and focal
+  translation; rotated pan bounds; labels rotating with the floor at bounded
+  screen sizes; shortest-path reset to 1×/0°/center; updated interaction hints.
+* **Gesture path:** One memoized UI-thread manual gesture coordinates the camera
+  from stable pointer IDs. Finger changes rebase, three fingers pause, UP events
+  exclude departed IDs, and near-coincident fingers cannot produce invalid zoom.
+  Incremental camera updates preserve the focal anchor away from map bounds.
+* **Performance review:** Pan/rotation share one annotation parent transform and
+  do not trigger individual label worklets. Zoom uses a shared derived scale and
+  direct matrices without intermediate point allocations. Stable viewport-only
+  layouts, source geometry, and discrete LOD/hysteresis are retained.
+* **Verification:** 17 tests pass, including a 2,500-update camera sequence,
+  glyph projection/sizing under rotation, real compiled gesture callbacks, and
+  static worklet-dependency checks. Expo lint, TypeScript, targeted full-file
+  ESLint, whitespace checks, and iOS/Android production Hermes exports pass.
+  Hook tests simulate timing and do not measure native render performance.
+* **Open:** No device is attached here. Android baseline/release comparisons and
+  before/after frame times, then iOS smoothness checks, remain in `TODO.md`.
+  Reported stutter is not confirmed resolved. Overview organization and remaining
+  label alignment work are still open. No dependencies or SVG sources changed.
+
 ## 2026-10-05 — Interactive sample map and annotation refinement
 
 * **Implemented:** Expo rendering of the labeled floor-2 SVG, viewport fitting,

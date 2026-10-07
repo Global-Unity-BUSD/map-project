@@ -12,7 +12,7 @@ export default function App() {
         <SafeAreaView style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.title}>Sample map · Floor 2</Text>
-            <Text style={styles.hint}>Pinch to explore · Drag to pan</Text>
+            <Text style={styles.hint}>Two fingers to zoom & rotate · Drag to pan</Text>
           </View>
           <InteractiveMap />
           <StatusBar style="dark" />

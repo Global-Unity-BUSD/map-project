@@ -24,3 +24,101 @@ export function focalOffset(startOffset: number, startFocal: number, focal: numb
   'worklet';
   return focal - (startFocal - startOffset) * ratio;
 }
+
+export type MapCamera = { zoom: number; rotation: number; x: number; y: number };
+type TouchPoint = { id: number; x: number; y: number };
+export type TouchFrame = {
+  count: number;
+  firstId: number;
+  secondId: number;
+  x: number;
+  y: number;
+  distance: number;
+  angle: number;
+};
+
+export function normalizeAngle(angle: number) {
+  'worklet';
+  const turn = Math.PI * 2;
+  return ((angle + Math.PI) % turn + turn) % turn - Math.PI;
+}
+
+// Pointer IDs, not event-array order, determine the pair's direction. On UP,
+// some platforms include the departing pointer in allTouches; exclude it by ID.
+export function touchFrame(touches: readonly TouchPoint[], width: number, height: number,
+  released?: readonly TouchPoint[]): TouchFrame | null {
+  'worklet';
+  let first: TouchPoint | undefined;
+  let second: TouchPoint | undefined;
+  let count = 0;
+  for (const touch of touches) {
+    let lifted = false;
+    if (released) {
+      for (const release of released) {
+        if (touch.id === release.id) { lifted = true; break; }
+      }
+    }
+    if (lifted) continue;
+    count++;
+    if (!first || touch.id < first.id) { second = first; first = touch; }
+    else if (!second || touch.id < second.id) second = touch;
+  }
+  if (!first) return null;
+  const dx = second ? second.x - first.x : 0;
+  const dy = second ? second.y - first.y : 0;
+  return {
+    count, firstId: first.id, secondId: second?.id ?? -1,
+    x: (second ? (first.x + second.x) / 2 : first.x) - width / 2,
+    y: (second ? (first.y + second.y) / 2 : first.y) - height / 2,
+    distance: second ? Math.sqrt(dx * dx + dy * dy) : 0,
+    angle: second ? Math.atan2(dy, dx) : 0,
+  };
+}
+
+export function rotatedSize(width: number, height: number, rotation: number) {
+  'worklet';
+  const c = Math.abs(Math.cos(rotation));
+  const s = Math.abs(Math.sin(rotation));
+  return { width: width * c + height * s, height: width * s + height * c };
+}
+
+// One camera update per touch event combines scale, twist, and translation.
+// Incremental rebasing makes reversing at a zoom/pan limit respond immediately.
+// Bounds take precedence over focal anchoring at the map's edges.
+export function moveCamera(camera: MapCamera, previous: TouchFrame | null, current: TouchFrame,
+  mapWidth: number, mapHeight: number, width: number, height: number): MapCamera {
+  'worklet';
+  if (!previous || current.count > 2 || previous.count !== current.count
+    || previous.firstId !== current.firstId || previous.secondId !== current.secondId) return camera;
+  let zoom = camera.zoom;
+  let delta = 0;
+  if (current.count === 2) {
+    // Rebase near coincident fingers rather than dividing by a tiny distance.
+    if (previous.distance < 2 || current.distance < 2) return camera;
+    zoom = clamp(camera.zoom * current.distance / previous.distance, MIN_ZOOM, MAX_ZOOM);
+    delta = normalizeAngle(current.angle - previous.angle);
+  }
+  const ratio = zoom / camera.zoom;
+  const c = Math.cos(delta);
+  const s = Math.sin(delta);
+  const dx = previous.x - camera.x;
+  const dy = previous.y - camera.y;
+  const rotation = camera.rotation + delta;
+  const extent = rotatedSize(mapWidth, mapHeight, rotation);
+  return {
+    zoom, rotation,
+    x: boundPan(current.x - ratio * (c * dx - s * dy), extent.width, width, zoom),
+    y: boundPan(current.y - ratio * (s * dx + c * dy), extent.height, height, zoom),
+  };
+}
+
+// Rotate the entire annotation group around the viewport center, then pan in
+// screen coordinates. Individual labels do not subscribe to pan or rotation.
+export function cameraMatrix(width: number, height: number, x: number, y: number, rotation: number) {
+  'worklet';
+  const c = Math.cos(rotation);
+  const s = Math.sin(rotation);
+  const cx = width / 2;
+  const cy = height / 2;
+  return [c, s, -s, c, cx + x - c * cx + s * cy, cy + y - s * cx - c * cy];
+}

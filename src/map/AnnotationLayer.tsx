@@ -1,12 +1,13 @@
 import { memo, useMemo } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
-import Animated, { useAnimatedProps, useAnimatedReaction, useSharedValue, withTiming,
+import Animated, { useAnimatedProps, useAnimatedReaction, useDerivedValue, useSharedValue, withTiming,
   type SharedValue } from 'react-native-reanimated';
 
 import map from '../../2026-10-04_floor2-labeled.svg';
-import { annotationMatrix, layoutAnnotations, projectAnchor, type PlacedAnnotation } from './annotationLayout';
+import { layoutAnnotations, zoomAnnotationMatrix, type PlacedAnnotation } from './annotationLayout';
 import { DETAIL_FADE_MS, type DetailLevel } from './detailPolicy';
+import { cameraMatrix } from './mapMath';
 
 const AnimatedGroup = Animated.createAnimatedComponent(G<{ matrix?: number[] }>);
 const MAP_WIDTH = map.width;
@@ -18,9 +19,11 @@ function matrixProps(matrix: number[]): { matrix?: number[]; transform?: string 
   return IS_WEB ? { transform: `matrix(${matrix.join(' ')})` } : { matrix };
 }
 type Camera = { width: number; height: number; fitScale: number;
-  zoom: SharedValue<number>; detail: SharedValue<DetailLevel> };
+  zoom: SharedValue<number>; rotation: SharedValue<number>; detail: SharedValue<DetailLevel> };
+type AnnotationCamera = { width: number; height: number; initialScale: number;
+  mapScale: SharedValue<number>; detail: SharedValue<DetailLevel> };
 
-const Annotation = memo(function Annotation({ label, width, height, fitScale, zoom, detail }: Camera & {
+const Annotation = memo(function Annotation({ label, width, height, initialScale, mapScale, detail }: AnnotationCamera & {
   label: PlacedAnnotation;
 }) {
   const { anchor, placements, d, kind } = label;
@@ -34,18 +37,18 @@ const Annotation = memo(function Annotation({ label, width, height, fitScale, zo
     // Hidden labels retain their previous matrix. Avoid pushing unused native
     // transforms throughout an overview pinch; fading-out labels still track.
     if (!placement.visible && opacity.value === 0) return { opacity: 0 };
-    const point = projectAnchor(anchor, fitScale, zoom.value, width, height, MAP_WIDTH, MAP_HEIGHT);
     return {
       opacity: opacity.value,
       // Native SVG matrix: keep source anchor attached to the camera, but
       // render glyph contours at a bounded screen-pixel size, not zoom × size.
-      ...matrixProps(annotationMatrix(anchor, placement, point)),
+      ...matrixProps(zoomAnnotationMatrix(anchor, placement, mapScale.value,
+        width, height, MAP_WIDTH, MAP_HEIGHT)),
     };
   });
   return (
     <AnimatedGroup opacity={placements[0].visible ? 1 : 0}
-      transform={annotationMatrix(anchor, placements[0], projectAnchor(anchor, fitScale, 1,
-        width, height, MAP_WIDTH, MAP_HEIGHT))}
+      transform={zoomAnnotationMatrix(anchor, placements[0], initialScale,
+        width, height, MAP_WIDTH, MAP_HEIGHT)}
       animatedProps={animatedProps}>
       <Path d={d} fill="#f8fafc" stroke="#f8fafc" strokeWidth={1.5}
         vectorEffect="non-scaling-stroke" strokeLinejoin="round" />
@@ -54,20 +57,24 @@ const Annotation = memo(function Annotation({ label, width, height, fitScale, zo
   );
 });
 
-export default memo(function AnnotationLayer({ x, y, ...camera }: Camera & {
+export default memo(function AnnotationLayer({ x, y, width, height, fitScale, zoom, rotation, detail }: Camera & {
   x: SharedValue<number>; y: SharedValue<number>;
 }) {
-  const { fitScale, width, height } = camera;
   const labels = useMemo(() => layoutAnnotations(map.annotations, map.walls, fitScale), [fitScale]);
-  // Pan a parent SVG group so clipping happens AFTER the camera translation.
+  const mapScale = useDerivedValue(() => fitScale * zoom.value);
+  // Rotate/pan a parent SVG group so clipping happens AFTER the camera transform.
   // A translated View/Svg viewport would prematurely clip offscreen anchors
   // and make them disappear when panned back into view.
-  const panProps = useAnimatedProps(() => matrixProps([1, 0, 0, 1, x.value, y.value]));
+  // Individual label worklets subscribe only to zoom/detail, never pan/rotation.
+  const cameraProps = useAnimatedProps(() => matrixProps(
+    cameraMatrix(width, height, x.value, y.value, rotation.value),
+  ));
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
       <Svg width={width} height={height}>
-        <AnimatedGroup animatedProps={panProps}>
-          {labels.map((label) => <Annotation key={label.id} label={label} {...camera} />)}
+        <AnimatedGroup animatedProps={cameraProps}>
+          {labels.map((label) => <Annotation key={label.id} label={label} width={width} height={height}
+            initialScale={fitScale} mapScale={mapScale} detail={detail} />)}
         </AnimatedGroup>
       </Svg>
     </View>

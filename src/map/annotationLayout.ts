@@ -135,3 +135,15 @@ export function annotationMatrix(anchor: MapAnnotation['anchor'], placement: Pla
     projected.x + placement.offsetX - anchor.x * scale,
     projected.y + placement.offsetY - anchor.y * scale];
 }
+
+// Direct projection avoids allocating a separate point for every visible label
+// on every zoom event. Pan/rotation are handled once by the parent SVG group.
+export function zoomAnnotationMatrix(anchor: MapAnnotation['anchor'], placement: Placement,
+  mapScale: number, width: number, height: number, mapWidth: number, mapHeight: number):
+  [number, number, number, number, number, number] {
+  'worklet';
+  const scale = placement.scale;
+  return [scale, 0, 0, scale,
+    width / 2 + (anchor.x - mapWidth / 2) * mapScale + placement.offsetX - anchor.x * scale,
+    height / 2 + (anchor.y - mapHeight / 2) * mapScale + placement.offsetY - anchor.y * scale];
+}
