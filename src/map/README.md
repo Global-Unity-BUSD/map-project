@@ -1,4 +1,33 @@
-# Interactive labeled sample map
+# Interactive campus map
+
+`floors.tsx` registers three levels in one campus frame (`CAMPUS`: 580 × 210
+units, zoom 1–24, opening on Building 1 at 3.1×). Each level has a geometry
+component, label specs (text labels plus stair markers) and searchable places.
+Floor 2 combines the traced 22xx/3-2xx plans with the Building 1 export, which
+is placed by `B1_FLOOR2_PLACEMENT`.
+
+Rendering (`InteractiveMap.tsx`):
+* **Geometry** is an SVG drawn for the *settled* camera, 40% larger than the
+  screen on each side. During a gesture or animation, the drawn layer is
+  translated and scaled on the GPU from the settled camera to the live one.
+  When the fingers lift or the animation ends, it redraws sharply
+  (`non-scaling-stroke` lines, detail level from the settled zoom).
+* **Labels** (`MapLabels.tsx`, `labelPlan.ts`) are native text views:
+  * The plan is computed once per floor and viewport. Each label appears at
+    the zoom where it fits its room and no longer overlaps a more important
+    label, and fades in over 4% of zoom.
+  * Building names vanish above 2.2×.
+  * Uncertain labels appear from 5×.
+  * Pan moves one container; zoom updates label positions with arithmetic only.
+* **Route drawing** (`navigation/RouteOverlay.tsx`) is part of the vector layer.
+
+Two-finger rotation is off (`ROTATION_ENABLED`); the rotation math and tests
+remain. The campus SVGs are read by `prepareFloorPlanSvg.cjs`. Layers:
+`footprint`, `site`, `walls`, `dividers`, `uncertain-lines`,
+`uncertain-symbols` and `stairs` (one path per stair symbol), plus `labels` and
+`route-candidates`. See `CAMPUS_MAP.md` for sources.
+
+# Floor 2 labeled sample map
 
 The only map input is `2026-10-04_floor2-labeled.svg`. Metro's small transformer
 extracts its existing paths at bundle time; there are no generated map files,
@@ -78,8 +107,8 @@ session from an older version, restart it once with `npx expo start --clear`.
 
 ## Interaction and checks
 
-One finger pans; two fingers simultaneously zoom, rotate and translate about
-their moving focal point. A memoized `Gesture.Manual()` processes a single touch
+One finger pans; two fingers simultaneously zoom and translate about their
+moving focal point (rotation is supported by the math but off in the UI). A memoized `Gesture.Manual()` processes a single touch
 stream on the UI thread instead of letting separate recognizers overwrite the
 same camera. Its attached viewport does not transform, so local touch coordinates
 remain stable. Pair order follows pointer IDs, not array order. Pointer changes
