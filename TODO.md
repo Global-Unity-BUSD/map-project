@@ -1,6 +1,128 @@
 # Current TODO
 
-## Current Task
+## Current Task: Bell Space product pass (2026-10-26)
+
+* **Diagnosis:** on the phone, Chat and Updates said "not available", and
+  Settings hid its Account section, because there is no `.env.local`
+  (no backend address). This is a configuration gap, not a runtime error. Q&A was
+  an unfinished placeholder. The SDK mismatch was fixed by the SDK 58 upgrade.
+* **Done:**
+  * Renamed to Bell Space (app.json name and slug, header, permission text, docs).
+  * Navigation uses the shared buttons; search results show Route or Map only,
+    and the destination card states the route status.
+  * Chat: a how-it-works card, and state cards for waiting, no guide
+    available, connected and ended.
+  * Updates: date badges, a 16:9 photo frame, and the sample football event
+    with the provided photo (bundled, offline too).
+  * Q&A: categories, search, and links to tabs. The answers are sample content in `src/content/qa.ts`.
+  * Settings: Account / About Bell Space / hidden Developer tools.
+* **Waiting on you:**
+  * Supabase project and `.env.local` (`PILOT_SETUP.md`), then the two-phone test.
+  * Photo-release approval (`assets/photos/README.md`) and the final Q&A wording.
+
+## Current Task: two-phone pilot for Chat and Updates (2026-10-25)
+
+Implemented (see `PILOT_SETUP.md`):
+* **Backend:** Supabase migration with row-level security and checked chat functions,
+  tested on real Postgres (`tests/pilot-rules.test.mjs`); seed script for 4 test accounts.
+* **Chat:** sign-in only for Chat and posting.
+  * Students: Ask as (Anonymous to guide / Show my name), topic, optional
+    language and question. Pending, Active and Closed states, with a clear
+    "no guide available" message.
+  * Guides: availability, a matching queue and Accept.
+  * Both sides: realtime messages, End conversation and Report.
+  * Reviewers: reported conversations only.
+* **Updates:** feed with realtime updates, and a labelled sample football event with a
+  placeholder graphic. Editor form for title, date and time, location, text and
+  a photo, with draft, publish and unpublish.
+* **Settings:** Account and About only. Developer tools (live location, positioning readings,
+  proposed routes) open after tapping Version 5 times.
+
+### Waiting on you
+* Create the Supabase project and run the two-phone test (`PILOT_SETUP.md`).
+* School approvals listed in `PILOT_SETUP.md` before real students use Chat.
+
+## Current Task: Building 1 entrances and the live-location experiment (2026-10-22)
+
+Implemented:
+* **Entrances** (`B1_ENTRANCES` in `src/navigation/data/building1Walkable.ts`):
+  * 1155–1162 are entered from their bottom side (the Quad); 1138–1144 and the
+    Book Room from their top side.
+  * The Library is entered from the gap by the Career Center and the Book Room,
+    and the Career Center from its bottom side.
+  * Each entrance has a door point and an approach point in walkable space. The sides
+    are checked, but the door positions are **approximate**
+    (`reference/review/entrances.jpg`, `ROUTE_REVIEW.md`).
+  * Other rooms (Cafeteria, Admin, 1-159, …) stay unavailable.
+* **AR removed** (the button, the badge and the roadmap step).
+* **Live location (experimental):** see `POSITIONING_EXPERIMENT.md`. It is off by
+  default, and permissions are asked only when it is switched on. It does not work
+  until 3+ reference points are measured.
+
+### iPhone checklist
+
+* [ ] Search 1155, then Directions, then start Student Area: the route ends at
+  1155's Quad-side wall.
+* [ ] 1141 from the Quad: the route arrives from above. Library from 1162: the
+  first step is "Leave Room 1162 by its entrance facing the Quad".
+* [ ] Cafeteria: no Directions ("entrance hasn't been confirmed").
+* [ ] Settings → Live location on: the permission prompts appear only now. The
+  chip shows "Map not aligned yet".
+* [ ] Walk test in `POSITIONING_EXPERIMENT.md`, then Share log.
+
+### Waiting on you
+
+* Door positions along each row (left of, right of or at each ≈ point).
+* 4 reference points plus a shared log from the walk test.
+
+## Current Task — Building 1 corrections and first real directions (2026-10-22)
+
+Implemented from the user's annotations:
+* **Map:**
+  * The gap between 2101 Drama and the Lunch Shelter is ~3× wider (only its two edges moved).
+  * The ramp is drawn in its own style; its Floor 2 connection is a proposal.
+  * Senior Hill is a draft circle at the Quad's middle-right edge.
+  * The Career Center adjoins the Library.
+  * The Lunch Shelter is an open covered area, open on its south and west sides.
+  * The open student space is tinted.
+* **Directions:**
+  * Open-area destinations (Lunch Shelter, Senior Hill, Quad, Student Area) are
+    routed inside the walkable space, around walls and stairs.
+  * The start is a tapped spot or an open area.
+  * Enclosed rooms are not offered until their entrance and path are checked.
+* **Performance:**
+  * No redraw after a pure pan.
+  * The redraw after a pinch is delayed 120 ms and cancelled by the next touch.
+  * Overscan is 30%.
+
+Review images: `reference/review/` (gap, ramp, senior-hill, career-center,
+lunch-shelter, routes).
+
+### iPhone checklist
+
+* [ ] `npx expo start --clear`; opens on Floor 1 with Building 1 filling the view;
+  no teacher parking.
+* [ ] Perf: pan for 10 s, then pinch for 10 s (Perf Monitor on). Lifting after a
+  pan causes no hitch; after a pinch, one short redraw.
+* [ ] The gap beside the Lunch Shelter looks ~3× wider; the ramp (purple, with
+  chevrons) is distinct from the teal stairs.
+* [ ] Search "Lunch Shelter", then Directions, then "Tap a spot on the map";
+  tap in the Student Area. A blue route enters the shelter from the south.
+  Start directions, step through, End.
+* [ ] Repeat with a tap in the gap west of the shelter: the route enters from the west side.
+* [ ] Search "Senior Hill", then Directions, then start "Student Area": the route
+  goes around the stairs.
+* [ ] Tap inside a room as a start: "Tap a spot in Building 1's open area." appears.
+* [ ] (Superseded: 1155 is now routed via its Quad-side entrance.)
+
+### Waiting on you
+
+* Senior Hill: mark its exact spot (no mark was found in the annotations).
+* Ramp: confirm the Floor 2 landing (`reference/review/ramp.jpg`).
+* Lunch Shelter: confirm its open sides (south and west assumed; north?).
+* `ROUTE_REVIEW.md`: barriers in the open space, room entrances, stairs.
+
+## Android Performance (open, follows the iPhone version)
 
 Diagnose and fix persistent Android map slowdown and unexpected white shapes
 over floor lines. The user reports that panning, pinch zoom, rotation, and detail
@@ -177,22 +299,10 @@ is unconfirmed; the issue remains open despite passing automated checks.
 
 ## Not Current
 
-Do not work on these yet:
+Do not work on these until a milestone above starts them:
 
-* GPS
-* indoor positioning
-* BLE
-* Wi-Fi positioning
-* sensors
-* PDR
-* sensor fusion
-* ML
-* navigation
-* routing
-* AR
-* backend
-* databases
-* authentication
-* analytics
-* tracking
+* indoor positioning beyond the live-location experiment (BLE / Wi-Fi / ML)
+* sensor fusion / ML
+* production backend, school SSO, push notifications
+* analytics and tracking
 * beacon deployment
