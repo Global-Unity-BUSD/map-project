@@ -1,0 +1,329 @@
+<svg width="580" height="210" viewBox="0 0 580 210" fill="none" xmlns="http://www.w3.org/2000/svg" data-floor="1" data-coverage="partial" data-frame="campus">
+<!-- CLEAR 2.0 campus map, Floor 1 (ground level): Buildings 1, 2 and 3 with site features, traced from the ground-level drawing.
+     Source: BHSCampusMap.pdf (2023 scan), 6000 px render straightened by 1.005 degrees.
+     Campus frame: 1 unit = 10 px of that render; origin at render px (120, 1900). No real-world scale.
+     data-status="documented": drawn and legible in the source. "uncertain": needs an in-person check.
+     Upper floors are placed by estimated transforms; see CAMPUS_MAP.md for alignment notes.
+     stairs: one path per stair symbol in the PDF (never merged). route-candidates are unverified
+     stairs, elevators and entrances. The ramp is not drawn until its proposal is reviewed. They are
+     not a route network. No doors or walkways are traced. -->
+<g id="footprint" data-status="documented" fill="#ffffff">
+  <path d="M383 81.5 L415 81.5 L415 78.4 L430.9 78.4 L430.9 77 L451.6 77 L451.6 97.5 L547.7 97.5 L547.7 119.8 L543.3 119.8 L543.3 114.8 L426.5 114.8 L426.5 119.6 L402.4 119.6 L402.4 85.2 L383 85.2 Z" data-note="Building 1"/>
+  <path d="M509.7 134.1 L541.8 134.1 L541.8 150.2 L509.7 150.2 Z" data-note="Building 1"/>
+  <path d="M513.3 150.2 L526.1 150.2 L526.1 157.8 L513.3 157.8 Z" data-note="Building 1"/>
+  <path d="M384.5 164.5 L461.5 164.5 L461.5 169 L526.3 169 L526.3 186.1 L453.8 186.1 L453.8 187.8 L447.3 187.8 Q417.9 194.8 388 188 L388 178 L384.5 178 Z" data-note="Building 1"/>
+  <path d="M526.1 191.8 L526.1 150.2 L541.8 150.2 L541.8 148.8 L550 148.8 L550 141.8 A3.4 3.4 0 0 1 556.8 141.8 L556.8 148.8 L562.9 148.8 L562.9 192.8 Q551.2 203.7 526.1 191.8 Z" data-note="Building 1"/>
+  <path d="M239.1 114.7 L270.8 114.7 L270.8 101.6 L324.3 101.6 L324.3 102.7 L373.5 102.7 L373.5 117.6 L356.5 117.6 L356.5 157.7 L357 157.7 L357 184 L330 184 L330 182.4 L306 182.4 L306 184 L293 184 L293 184 L255 184 L255 184.8 L238.9 184.8 L238.9 151.8 L239.1 151.8 Z" data-note="Building 2"/>
+  <path d="M94.1 114.5 L196.3 114.5 L196.3 129.2 L187 129.2 L187 136.2 L229 136 L229 181.4 L176.7 181.4 L176.7 189.4 L94.1 189.4 Z" data-note="Building 3"/>
+  <path d="M60.2 139.1 L67.7 139.1 L67.7 145.6 L84 147.9 L84 184 L83.8 191.5 L60.2 195.3 Z" data-note="Building 3 basement side"/>
+</g>
+<g id="open-areas" data-status="documented" fill="#e8f3e3">
+  <path d="M373.6 79.8 L383 79.8 L383 85.2 L402.4 85.2 L402.4 119.6 L426.5 119.6 L426.5 114.8 L543.3 114.8 L543.3 119.8 L547.7 119.8 L547.7 148.8 L541.8 148.8 L541.8 134.1 L509.7 134.1 L509.7 150.2 L513.3 150.2 L513.3 157.8 L526.1 157.8 L526.1 169 L461.5 169 L461.5 164.5 L376.8 164.5 L376.8 119.6 L373.6 119.6 Z" data-note="Quad, Student Area and the open space between them, Building 1"/>
+</g>
+<g id="covered-areas" data-status="documented" fill="#f1ead8">
+  <path d="M383 85.2 L402.4 85.2 L402.4 119.6 L383 119.6 Z" data-note="Lunch Shelter: covered, open on its south and west sides"/>
+</g>
+<g id="hills" data-status="documented" fill="#d3e9c8" stroke="#6b9e5a" stroke-width="0.3" stroke-dasharray="1 0.8">
+  <path d="M491.3 141.8 A8 8 0 1 0 507.3 141.8 A8 8 0 1 0 491.3 141.8 Z" data-note="Senior Hill (draft boundary, position from the user)"/>
+</g>
+<g id="site" data-status="documented" stroke="#b8c2cb" stroke-width="0.3">
+</g>
+<g id="walls" data-status="documented" stroke="#788791" stroke-width="0.5" stroke-linejoin="round">
+  <path d="M383 85.2 L383 81.5 L415 81.5 L415 78.4 L430.9 78.4 L430.9 77 L451.6 77 L451.6 97.5 L547.7 97.5 L547.7 119.8 L543.3 119.8 L543.3 114.8 L426.5 114.8 L426.5 119.6 L402.4 119.6" data-note="Building 1"/>
+  <path d="M513.3 150.2 L513.3 157.8 L526.1 157.8" data-note="Building 1"/>
+  <path d="M541.8 150.2 L541.8 134.1 L509.7 134.1 L509.7 150.2 L527.2 150.2" data-note="Building 1"/>
+  <path d="M384.5 164.5 L461.5 164.5 L461.5 169 L526.3 169 L526.3 186.1 L453.8 186.1 L453.8 187.8 L447.3 187.8 Q417.9 194.8 388 188 L388 178 L384.5 178 Z" data-note="Building 1"/>
+  <path d="M526.1 150.2 L526.1 169" data-note="Building 1"/>
+  <path d="M526.1 186.1 L526.1 191.8" data-note="Building 1"/>
+  <path d="M541.8 148.8 L550 148.8 L550 141.8 A3.4 3.4 0 0 1 556.8 141.8 L556.8 148.8 L562.9 148.8 L562.9 192.8 Q551.2 203.7 526.1 191.8" data-note="Building 1"/>
+  <path d="M402.4 84.5 L402.4 119.6" data-note="Building 1"/>
+  <path d="M383 85.2 L415.7 85.2" data-note="Building 1"/>
+  <path d="M270.8 101.6 L324.3 101.6" data-note="Building 2"/>
+  <path d="M270.8 101.6 L270.8 114" data-note="Building 2"/>
+  <path d="M320.1 101 L320.1 111.4" data-note="Building 2"/>
+  <path d="M273.7 113.6 L273.7 144.5" data-note="Building 2"/>
+  <path d="M328.6 102.7 L373.5 102.7" data-note="Building 2"/>
+  <path d="M373.5 100.8 L373.5 118" data-note="Building 2"/>
+  <path d="M354.5 117.6 L373.5 117.6" data-note="Building 2"/>
+  <path d="M357 117.6 L357 120" data-note="Building 2"/>
+  <path d="M357 157.7 L357 184.1" data-note="Building 2"/>
+  <path d="M332.1 184 L357 184" data-note="Building 2"/>
+  <path d="M330 172.2 L330 182.4" data-note="Building 2"/>
+  <path d="M305.7 182.4 L330 182.4" data-note="Building 2"/>
+  <path d="M306 169.3 L306 182.6" data-note="Building 2"/>
+  <path d="M302.2 169.6 L341.8 169.6" data-note="Building 2"/>
+  <path d="M254.6 170 L294.5 170" data-note="Building 2"/>
+  <path d="M255 170 L255 184" data-note="Building 2"/>
+  <path d="M255 184 L293 184" data-note="Building 2"/>
+  <path d="M293 170 L293 184" data-note="Building 2"/>
+  <path d="M238.9 159.2 L238.9 185.3" data-note="Building 2"/>
+  <path d="M238.9 184.8 L254.8 184.8" data-note="Building 2"/>
+  <path d="M239.1 114.7 L239.1 151.8" data-note="Building 2"/>
+  <path d="M239.1 122.4 L249.8 122.4" data-note="Building 2"/>
+  <path d="M250.3 114.4 L250.3 140.2" data-note="Building 2"/>
+  <path d="M239.1 114.7 L243 114.7 L243 111.8 L246 111.8 L246 114.7 L250.3 114.7" data-note="Building 2"/>
+  <path d="M255 115.4 L255 136.3" data-note="Building 2"/>
+  <path d="M257.7 117.9 L273.9 117.9" data-note="Building 2"/>
+  <path d="M254.8 141.8 L272.6 141.8" data-note="Building 2"/>
+  <path d="M270.8 106.5 L265 106.5 A3.5 3.5 0 0 0 265 113.5 L270.8 113.5" data-note="Building 2"/>
+  <path d="M94.1 114.5 L196.3 114.5" data-note="Building 3"/>
+  <path d="M196.3 114.5 L196.3 129.2" data-note="Building 3"/>
+  <path d="M186.1 129.2 L196.9 129.2" data-note="Building 3"/>
+  <path d="M187 129.2 L187 136.2" data-note="Building 3"/>
+  <path d="M94.1 131.8 L176.6 131.6" data-note="Building 3"/>
+  <path d="M94.1 136.8 L193.7 136.6" data-note="Building 3"/>
+  <path d="M94.1 114.5 L94.1 193.4" data-note="Building 3"/>
+  <path d="M176.7 136.1 L176.7 186.2" data-note="Building 3"/>
+  <path d="M94.1 189.4 L165.7 189.4" data-note="Building 3"/>
+  <path d="M94.1 183 L176.7 183" data-note="Building 3"/>
+  <path d="M193.7 136.2 L229 136" data-note="Building 3"/>
+  <path d="M226.1 156.5 L226.1 182" data-note="Building 3"/>
+  <path d="M176.7 181.4 L226.5 181.4" data-note="Building 3"/>
+  <path d="M60.2 139.1 L60.2 195.3" data-note="Building 3"/>
+  <path d="M63.2 156.7 L63.2 186.5" data-note="Building 3"/>
+  <path d="M67.7 145.6 L67.7 174.8" data-note="Building 3"/>
+  <path d="M83.8 167.2 L83.8 184" data-note="Building 3"/>
+  <path d="M84 147.9 L84 160" data-note="Building 3"/>
+  <path d="M59.2 145.5 L68.2 145.5 L68.2 157.5 L59.2 157.5 L59.2 145.5" data-note="Building 3"/>
+</g>
+<g id="dividers" data-status="documented" stroke="#788791" stroke-width="0.3" stroke-dasharray="1.2 0.8">
+  <path d="M451.1 97.5 L451.1 114.8" data-note="Building 1"/>
+  <path d="M460.5 97.5 L460.5 114.8" data-note="Building 1"/>
+  <path d="M469.6 97.5 L469.6 114.8" data-note="Building 1"/>
+  <path d="M478.8 97.5 L478.8 114.8" data-note="Building 1"/>
+  <path d="M493.6 97.5 L493.6 114.8" data-note="Building 1"/>
+  <path d="M498.9 97.5 L498.9 114.8" data-note="Building 1"/>
+  <path d="M513.8 97.5 L513.8 114.8" data-note="Building 1"/>
+  <path d="M522.8 97.5 L522.8 114.8" data-note="Building 1"/>
+  <path d="M532.3 97.5 L532.3 114.8" data-note="Building 1"/>
+  <path d="M402.4 98 L451.1 98" data-note="Building 1"/>
+  <path d="M427.3 85.2 L427.3 98" data-note="Building 1"/>
+  <path d="M447.3 164.5 L447.3 187.8" data-note="Building 1"/>
+  <path d="M459.6 169 L459.6 186.1" data-note="Building 1"/>
+  <path d="M469.1 169 L469.1 186.1" data-note="Building 1"/>
+  <path d="M478.6 169 L478.6 186.1" data-note="Building 1"/>
+  <path d="M488.1 169 L488.1 186.1" data-note="Building 1"/>
+  <path d="M497.5 169 L497.5 186.1" data-note="Building 1"/>
+  <path d="M506.9 169 L506.9 186.1" data-note="Building 1"/>
+  <path d="M516.9 169 L516.9 186.1" data-note="Building 1"/>
+  <path d="M526.3 169 L526.3 186.1" data-note="Building 1"/>
+  <path d="M510 139.8 L527.8 139.8" data-note="Building 1"/>
+  <path d="M527.8 134.6 L527.8 150.2" data-note="Building 1"/>
+  <path d="M514.3 134.6 L514.3 144.3" data-note="Building 1"/>
+  <path d="M270.8 113.7 L320 113.7" data-note="Building 2"/>
+  <path d="M283.5 102 L283.5 113.7" data-note="Building 2"/>
+  <path d="M273.7 144.5 L273.7 153" data-note="Building 2"/>
+  <path d="M273.7 153 L320 153" data-note="Building 2"/>
+  <path d="M320 113.7 L320 153" data-note="Building 2"/>
+  <path d="M268 142 L268 153" data-note="Building 2"/>
+  <path d="M255 153 L273.7 153" data-note="Building 2"/>
+  <path d="M239.1 153 L255 153" data-note="Building 2"/>
+  <path d="M239.1 159 L255 159" data-note="Building 2"/>
+  <path d="M250.3 153 L250.3 184.8" data-note="Building 2"/>
+  <path d="M255 159 L294.5 159" data-note="Building 2"/>
+  <path d="M302.5 159 L357 159" data-note="Building 2"/>
+  <path d="M265.8 159 L265.8 170" data-note="Building 2"/>
+  <path d="M280 159 L280 170" data-note="Building 2"/>
+  <path d="M317.3 159 L317.3 169.6" data-note="Building 2"/>
+  <path d="M332 159 L332 169.6" data-note="Building 2"/>
+  <path d="M346 159 L346 184" data-note="Building 2"/>
+  <path d="M346 170.5 L357 170.5" data-note="Building 2"/>
+  <path d="M320 122 L341.5 122" data-note="Building 2"/>
+  <path d="M341.5 122 L341.5 141" data-note="Building 2"/>
+  <path d="M320 141 L341.5 141" data-note="Building 2"/>
+  <path d="M326.5 141 L326.5 152.8" data-note="Building 2"/>
+  <path d="M334 141 L334 152.8" data-note="Building 2"/>
+  <path d="M341.5 141 L341.5 152.8" data-note="Building 2"/>
+  <path d="M346 141 L346 152.8" data-note="Building 2"/>
+  <path d="M350.5 141 L350.5 152.8" data-note="Building 2"/>
+  <path d="M320 152.8 L356.5 152.8" data-note="Building 2"/>
+  <path d="M356.5 120 L356.5 153" data-note="Building 2"/>
+  <path d="M328.6 102.7 L328.6 117.6" data-note="Building 2"/>
+  <path d="M352 102.7 L352 117.6" data-note="Building 2"/>
+  <path d="M352 110 L360 110" data-note="Building 2"/>
+  <path d="M360 102.7 L360 117.6" data-note="Building 2"/>
+  <path d="M328.6 117 L354.5 117" data-note="Building 2"/>
+  <path d="M100.6 114.5 L100.6 131.8" data-note="Building 3"/>
+  <path d="M107.3 114.5 L107.3 131.8" data-note="Building 3"/>
+  <path d="M110.8 114.5 L110.8 131.8" data-note="Building 3"/>
+  <path d="M119.2 114.5 L119.2 131.8" data-note="Building 3"/>
+  <path d="M132.4 114.5 L132.4 131.8" data-note="Building 3"/>
+  <path d="M142.5 114.5 L142.5 131.8" data-note="Building 3"/>
+  <path d="M154.2 114.5 L154.2 131.8" data-note="Building 3"/>
+  <path d="M168.7 114.5 L168.7 131.8" data-note="Building 3"/>
+  <path d="M176.6 114.5 L176.6 131.8" data-note="Building 3"/>
+  <path d="M132.4 125 L154.2 125" data-note="Building 3"/>
+  <path d="M94.1 123.5 L100.6 123.5" data-note="Building 3"/>
+  <path d="M98 183 L98 189.4" data-note="Building 3"/>
+  <path d="M105 183 L105 189.4" data-note="Building 3"/>
+  <path d="M147 183 L147 189.4" data-note="Building 3"/>
+  <path d="M165.5 183 L165.5 189.4" data-note="Building 3"/>
+  <path d="M172 183 L172 189.4" data-note="Building 3"/>
+</g>
+<g id="uncertain-lines" data-status="uncertain" stroke="#a7b1b9" stroke-width="0.3" stroke-dasharray="0.8 1">
+  <path d="M426.5 119.3 L508.8 119.3" data-note="Dashed line along the Quad side of the north row; meaning unknown"/>
+  <path d="M509.6 119.8 L509.6 134.3" data-note="Dashed outline east of the Quad; meaning unknown"/>
+  <path d="M514.3 119.8 L530.8 119.8 L530.8 131.8 L514.3 131.8 Z" data-note="Dashed outline around the east stair symbol; meaning unknown"/>
+  <path d="M535.3 119.8 L535.3 133.8" data-note="Dashed line west of the library; meaning unknown"/>
+  <path d="M454.3 164.3 L509.6 164.3" data-note="Dashed line along the Quad side of the south row; meaning unknown"/>
+  <path d="M454.3 157.3 L477.8 157.3 L477.8 164.3 L454.3 164.3 Z" data-note="Dashed outline around the south stair symbol; meaning unknown"/>
+  <path d="M509.6 150.3 L509.6 164.3" data-note="Dashed line east of the Quad; meaning unknown"/>
+  <path d="M421.3 78.4 L421.3 85.2" data-note="Dashed line in the unlabeled space west of the kitchen"/>
+  <path d="M446.1 104 L450.8 104 L450.8 111.8 L446.1 111.8 Z" data-note="Small dashed box at the east end of the cafeteria; meaning unknown"/>
+  <path d="M527.8 150.2 L541.8 150.2" data-note="Dashed line between Comp room and library"/>
+  <path d="M261.4 117.8 L266.8 117.8 L266.8 127 L261.4 127 L261.4 117.8" data-note="Small unlabeled box west of the auditorium"/>
+  <path d="M324 103.5 L328.6 103.5 L328.6 117.6 L324 117.6 L324 103.5" data-note="Small room left of 2107; label reads 2-108 or 2-109"/>
+  <path d="M11 137 L48.5 137" data-note="Fence-like line marked with X (north edge of tennis courts?)"/>
+  <path d="M5 150 L57 150" data-note="Fence-like line marked with X"/>
+</g>
+<g id="uncertain-symbols" data-status="uncertain" stroke="#a7b1b9" stroke-width="0.3">
+  <path d="M543.3 115 L547.6 115 L547.6 119.6 L543.3 119.6 Z M543.3 115 L547.6 119.6 M547.6 115 L543.3 119.6" data-note="Crossed-box symbol at the east end of the north row"/>
+  <path d="M510.3 144.5 L514.6 144.5 L514.6 149.6 L510.3 149.6 Z M510.3 144.5 L514.6 149.6 M514.6 144.5 L510.3 149.6" data-note="Crossed-box symbol in the east block"/>
+  <path d="M239 185.5 L246.5 185.5 L246.5 192 L239 192 Z" data-note="Exit pictogram"/>
+  <path d="M298 194.5 L305 194.5 L305 200 L298 200 Z" data-note="Exit pictogram"/>
+  <path d="M192 114 L196 114 L196 118 L192 118 Z M192 114 L196 118 M196 114 L192 118" data-note="PDF label ELEV. with leader (north-east corner)"/>
+  <path d="M64.8 151.5 L67.5 151.5 L67.5 156 L64.8 156 Z M64.8 151.5 L67.5 156 M67.5 151.5 L64.8 156" data-note="PDF label ELEV. with leader (basement side)"/>
+  <path d="M60.2 157 L63.2 157 L63.2 193.5 L60.2 193.5 Z M60.2 166.1 L63.2 166.1 M60.2 175.2 L63.2 175.2 M60.2 184.4 L63.2 184.4" data-note="Ladder-like column; stairs or ramp?"/>
+  <path d="M68 173.5 L84 173.5 L84 184 L68 184 Z" data-note="Two pictograms (exit or stair symbols?)"/>
+  <path d="M177 183.5 L186 183.5 L186 193.5 L177 193.5 Z" data-note="Exit pictogram"/>
+  <path d="M83.5 102.5 L88 110.5 L79 110.5 Z" data-note="Triangle symbol with a mark inside; meaning unknown"/>
+  <path d="M40.5 177.5 L45 185.5 L36 185.5 Z" data-note="Triangle symbol with a mark inside; meaning unknown"/>
+  <path d="M235 188 L239 196 L231 196 Z" data-note="Triangle symbol with a mark inside; meaning unknown"/>
+</g>
+<g id="ramp" data-status="documented" fill="#ede3fb" stroke="#7c3aed" stroke-width="0.3">
+  <path d="M378 70 Q394 65 409.5 64 L415 74.5 Q398 76 378 81 Z" data-note="Ramp between 2101 Drama and the Wellness Center block, rising toward Building 1 Floor 2 (drawing confirmed by the user; the Floor 2 connection is proposed)"/>
+</g>
+<g id="ramp-marks" data-status="documented" stroke="#7c3aed" stroke-width="0.3">
+  <path d="M385.6 71.7 L387.8 73.3 L385.6 74.9 M395.6 69.6 L397.8 71.2 L395.6 72.8 M405.6 68.1 L407.8 69.7 L405.6 71.3" data-note="Uphill chevrons along the ramp"/>
+</g>
+<g id="stairs" data-status="uncertain" fill="#d7f0ea" stroke="#0f766e" stroke-width="0.3">
+  <path id="stair-1-1" d="M432.1 119.6 L440 119.6 L440 131.3 L432.1 131.3 Z M432.1 122.5 L440 122.5 M432.1 125.4 L440 125.4 M432.1 128.3 L440 128.3" data-building="1" data-cx="436" data-cy="125.4" data-note="Hatched stair symbol near the Cafeteria"/>
+  <path id="stair-1-2" d="M519.6 122.8 L530.8 122.8 L530.8 130.3 L519.6 130.3 Z M522.4 122.8 L522.4 130.3 M525.2 122.8 L525.2 130.3 M528 122.8 L528 130.3" data-building="1" data-cx="525.2" data-cy="126.5" data-note="Hatched stair symbol north of the Career Center"/>
+  <path id="stair-1-3" d="M459.8 157.8 L476.3 157.8 L476.3 162.3 L459.8 162.3 Z M463.9 157.8 L463.9 162.3 M468 157.8 L468 162.3 M472.2 157.8 L472.2 162.3" data-building="1" data-cx="468" data-cy="160" data-note="Hatched stair symbol on the south side of the Quad"/>
+  <path id="stair-1-4" d="M268 142 L273.7 142 L273.7 153 L268 153 Z M268 144.8 L273.7 144.8 M268 147.5 L273.7 147.5 M268 150.2 L273.7 150.2" data-building="2" data-cx="270.9" data-cy="147.5" data-note="PDF label STR (west of auditorium)"/>
+  <path id="stair-1-5" d="M320 141.5 L326.5 141.5 L326.5 152.5 L320 152.5 Z M320 144.2 L326.5 144.2 M320 147 L326.5 147 M320 149.8 L326.5 149.8" data-building="2" data-cx="323.2" data-cy="147" data-note="PDF label STR (east of auditorium)"/>
+  <path id="stair-1-6" d="M255.5 179 L262 179 L262 181.5 L255.5 181.5 Z M257.1 179 L257.1 181.5 M258.8 179 L258.8 181.5 M260.4 179 L260.4 181.5" data-building="2" data-cx="258.8" data-cy="180.2" data-note="PDF label STR (south side)"/>
+  <path id="stair-1-7" d="M334.5 178 L341 178 L341 181 L334.5 181 Z M336.1 178 L336.1 181 M337.8 178 L337.8 181 M339.4 178 L339.4 181" data-building="2" data-cx="337.8" data-cy="179.5" data-note="PDF label STR (south-east)"/>
+  <path id="stair-1-8" d="M293.5 177 L302.5 177 L302.5 181 L293.5 181 Z M295.8 177 L295.8 181 M298 177 L298 181 M300.2 177 L300.2 181" data-building="2" data-cx="298" data-cy="179" data-note="Hatched stair at the south entrance"/>
+  <path id="stair-1-9" d="M287 189.5 L318 189.5 L318 191.5 L287 191.5 Z M294.8 189.5 L294.8 191.5 M302.5 189.5 L302.5 191.5 M310.2 189.5 L310.2 191.5" data-building="2" data-cx="302.5" data-cy="190.5" data-note="Hatched band south of Building 2 (steps?)"/>
+  <path id="stair-1-10" d="M89.5 119 L94 119 L94 130 L89.5 130 Z M89.5 121.8 L94 121.8 M89.5 124.5 L94 124.5 M89.5 127.2 L94 127.2" data-building="3" data-cx="91.8" data-cy="124.5" data-note="Hatched stair west of the Building 3 locker row"/>
+  <path id="stair-1-11" d="M142 124.5 L145 124.5 L145 131.5 L142 131.5 Z M142 126.2 L145 126.2 M142 128 L145 128 M142 129.8 L145 129.8" data-building="3" data-cx="143.5" data-cy="128" data-note="PDF label STR (locker row)"/>
+  <path id="stair-1-12" d="M200 113.5 L212 113.5 L212 118.5 L200 118.5 Z M203 113.5 L203 118.5 M206 113.5 L206 118.5 M209 113.5 L209 118.5" data-building="3" data-cx="206" data-cy="116" data-note="PDF label STR (exterior, north-east)"/>
+  <path id="stair-1-13" d="M60 146.5 L64.5 146.5 L64.5 151 L60 151 Z M61.1 146.5 L61.1 151 M62.2 146.5 L62.2 151 M63.4 146.5 L63.4 151" data-building="3" data-cx="62.2" data-cy="148.8" data-note="PDF label STR (basement side)"/>
+  <path id="stair-1-14" d="M64 187 L84 187 L84 191.5 L64 191.5 Z M69 187 L69 191.5 M74 187 L74 191.5 M79 187 L79 191.5" data-building="3" data-cx="74" data-cy="189.2" data-note="PDF label STR (south of basement area)"/>
+  <path id="stair-1-15" d="M116.5 195.5 L122 195.5 L122 199.5 L116.5 199.5 Z M117.9 195.5 L117.9 199.5 M119.2 195.5 L119.2 199.5 M120.6 195.5 L120.6 199.5" data-building="3" data-cx="119.2" data-cy="197.5" data-note="PDF label STR (south of lobby)"/>
+  <path id="stair-1-16" d="M149 194.5 L154 194.5 L154 198.5 L149 198.5 Z M150.2 194.5 L150.2 198.5 M151.5 194.5 L151.5 198.5 M152.8 194.5 L152.8 198.5" data-building="3" data-cx="151.5" data-cy="196.5" data-note="PDF label STR (south of lobby)"/>
+</g>
+<g id="labels">
+  <rect id="g-b1-lunch-shelter" data-label="Lunch Shelter" data-kind="area" data-status="documented" data-building="1" data-level="1" x="383" y="85.2" width="19.4" height="34.4" data-label-x="392.7" data-label-y="102.4" data-rotate="-90" data-lines="2" data-note="Wide open covered area with no doors; open on its south and west sides (user, 2026-10-22)"/>
+  <rect id="g-b1-student-area" data-label="Student Area" data-kind="area" data-status="documented" data-building="1" data-level="1" x="376.8" y="121.9" width="46.5" height="40.3" data-label-x="399.8" data-label-y="141.8" data-rotate="0" data-lines="2" data-note="Open student area west of the Quad (PDF handwriting; user annotation)"/>
+  <rect id="g-b1-senior-hill" data-label="Senior Hill" data-kind="area" data-status="documented" data-building="1" data-level="1" x="491.3" y="133.8" width="16" height="16" data-label-x="499.3" data-label-y="141.8" data-rotate="0" data-lines="2" data-note="Round student area at the middle-right edge of the Quad (user); boundary is a draft"/>
+  <rect id="g-b1-wellness-center" data-label="Wellness Center" data-kind="area" data-status="documented" data-building="1" data-level="1" x="402.4" y="85.2" width="24.9" height="12.8" data-label-x="414.8" data-label-y="91.6" data-rotate="0" data-lines="2"/>
+  <rect id="g-b1-kitchen" data-label="Kitchen" data-kind="area" data-status="documented" data-building="1" data-level="1" x="427.3" y="77" width="24.3" height="21" data-label-x="439.4" data-label-y="87.5" data-rotate="0"/>
+  <rect id="g-b1-cafeteria" data-label="Cafeteria" data-kind="area" data-status="documented" data-building="1" data-level="1" x="402.4" y="98" width="48.7" height="16.8" data-label-x="426.7" data-label-y="106.4" data-rotate="0"/>
+  <rect id="g-b1-restroom-north" data-label="T" data-kind="room" data-status="uncertain" data-building="1" data-level="1" x="451.1" y="97.5" width="9.4" height="17.3" data-label-x="455.8" data-label-y="106.1" data-rotate="0" data-note="Label T is presumed to mean restroom"/>
+  <rect id="g-b1-room-1162" data-label="1162" data-kind="room" data-status="documented" data-building="1" data-level="1" x="460.5" y="97.5" width="9.1" height="17.3" data-label-x="465" data-label-y="106.1" data-rotate="-90"/>
+  <rect id="g-b1-room-1161" data-label="1161" data-kind="room" data-status="documented" data-building="1" data-level="1" x="469.6" y="97.5" width="9.2" height="17.3" data-label-x="474.2" data-label-y="106.1" data-rotate="-90"/>
+  <rect id="g-b1-room-1160" data-label="1160" data-kind="room" data-status="documented" data-building="1" data-level="1" x="478.8" y="97.5" width="14.8" height="17.3" data-label-x="486.2" data-label-y="106.1" data-rotate="-90"/>
+  <rect id="g-b1-room-1-159" data-label="1-159" data-kind="room" data-status="uncertain" data-building="1" data-level="1" x="493.6" y="97.5" width="5.3" height="17.3" data-label-x="496.2" data-label-y="106.1" data-rotate="-90" data-note="Label partly illegible: 1159, 1-159 or a closet"/>
+  <rect id="g-b1-room-1158" data-label="1158" data-kind="room" data-status="documented" data-building="1" data-level="1" x="498.9" y="97.5" width="14.9" height="17.3" data-label-x="506.3" data-label-y="106.1" data-rotate="-90"/>
+  <rect id="g-b1-room-1157" data-label="1157" data-kind="room" data-status="documented" data-building="1" data-level="1" x="513.8" y="97.5" width="9" height="17.3" data-label-x="518.3" data-label-y="106.1" data-rotate="-90"/>
+  <rect id="g-b1-room-1156" data-label="1156" data-kind="room" data-status="documented" data-building="1" data-level="1" x="522.8" y="97.5" width="9.5" height="17.3" data-label-x="527.5" data-label-y="106.1" data-rotate="-90"/>
+  <rect id="g-b1-room-1155" data-label="1155" data-kind="room" data-status="documented" data-building="1" data-level="1" x="532.3" y="97.5" width="15.1" height="17.3" data-label-x="539.8" data-label-y="106.1" data-rotate="-90"/>
+  <rect id="g-b1-quad" data-label="Quad" data-kind="area" data-status="documented" data-building="1" data-level="1" x="427.8" y="119.8" width="81" height="44" data-label-x="468.3" data-label-y="139.3" data-rotate="0" data-note="Open area; no boundary is drawn in the source"/>
+  <rect id="g-b1-restroom-east-1" data-label="T" data-kind="room" data-status="uncertain" data-building="1" data-level="1" x="510" y="134.6" width="4.3" height="5.2" data-label-x="512.1" data-label-y="137.2" data-rotate="0" data-note="Label T is presumed to mean restroom"/>
+  <rect id="g-b1-restroom-east-2" data-label="T" data-kind="room" data-status="uncertain" data-building="1" data-level="1" x="510" y="139.8" width="4.3" height="4.5" data-label-x="512.1" data-label-y="142" data-rotate="0" data-note="Label T is presumed to mean restroom"/>
+  <rect id="g-b1-elev-m" data-label="ELEV. M." data-kind="room" data-status="uncertain" data-building="1" data-level="1" x="514.3" y="134.6" width="13.5" height="5.2" data-label-x="521" data-label-y="137.2" data-rotate="0" data-note="Elevator or elevator machine room: unverified"/>
+  <rect id="g-b1-career-center" data-label="Career Center" data-kind="area" data-status="documented" data-building="1" data-level="1" x="513.3" y="150.2" width="12.8" height="7.6" data-label-x="519.7" data-label-y="154" data-rotate="0" data-lines="2" data-note="Next to the Library (user correction); the PDF prints the name in the block above"/>
+  <rect id="g-b1-comp-room" data-label="Comp" data-kind="room" data-status="uncertain" data-building="1" data-level="1" x="527.8" y="134.6" width="14" height="15.6" data-label-x="534.8" data-label-y="142.4" data-rotate="-90" data-note="Second line of the label is illegible"/>
+  <rect id="g-b1-admin-offices" data-label="Admin Offices" data-kind="area" data-status="documented" data-building="1" data-level="1" x="388" y="164.5" width="59.3" height="23.3" data-label-x="418.8" data-label-y="176.3" data-rotate="0" data-lines="2" data-note="Interior layout not documented"/>
+  <rect id="g-b1-room-1138" data-label="1138" data-kind="room" data-status="documented" data-building="1" data-level="1" x="447.3" y="164.5" width="12.3" height="22.3" data-label-x="453.4" data-label-y="175.6" data-rotate="-90"/>
+  <rect id="g-b1-room-1139" data-label="1139" data-kind="room" data-status="documented" data-building="1" data-level="1" x="459.6" y="169" width="9.5" height="17.1" data-label-x="464.3" data-label-y="177.5" data-rotate="-90"/>
+  <rect id="g-b1-room-1140" data-label="1140" data-kind="room" data-status="documented" data-building="1" data-level="1" x="469.1" y="169" width="9.5" height="17.1" data-label-x="473.8" data-label-y="177.5" data-rotate="-90"/>
+  <rect id="g-b1-room-1141" data-label="1141" data-kind="room" data-status="documented" data-building="1" data-level="1" x="478.6" y="169" width="9.5" height="17.1" data-label-x="483.3" data-label-y="177.5" data-rotate="-90"/>
+  <rect id="g-b1-room-1142" data-label="1142" data-kind="room" data-status="documented" data-building="1" data-level="1" x="488.1" y="169" width="9.4" height="17.1" data-label-x="492.8" data-label-y="177.5" data-rotate="-90"/>
+  <rect id="g-b1-room-1143" data-label="1143" data-kind="room" data-status="documented" data-building="1" data-level="1" x="497.5" y="169" width="9.4" height="17.1" data-label-x="502.2" data-label-y="177.5" data-rotate="-90"/>
+  <rect id="g-b1-room-1144" data-label="1144" data-kind="room" data-status="documented" data-building="1" data-level="1" x="506.9" y="169" width="10" height="17.1" data-label-x="511.9" data-label-y="177.5" data-rotate="-90"/>
+  <rect id="g-b1-book-room" data-label="BookRm" data-kind="room" data-status="documented" data-building="1" data-level="1" x="516.9" y="169" width="9.4" height="17.1" data-label-x="521.6" data-label-y="177.5" data-rotate="-90" data-title="Book Room" data-note="Book room"/>
+  <rect id="g-b1-library" data-label="Library" data-kind="area" data-status="documented" data-building="1" data-level="1" x="526.3" y="150.2" width="36.6" height="41.6" data-label-x="544.3" data-label-y="171.8" data-rotate="0" data-note="Interior layout not documented"/>
+  <rect id="g-b1-third-street" data-label="Third Street" data-kind="context" data-status="documented" data-building="" data-level="1" x="447.8" y="188.8" width="60" height="10" data-label-x="475.8" data-label-y="193.8" data-rotate="0" data-note="Street name for orientation"/>
+  <rect id="g-b1-harvard-road" data-label="Harvard Road" data-kind="context" data-status="documented" data-building="" data-level="1" x="547.8" y="77.8" width="20" height="50" data-label-x="557.8" data-label-y="101.8" data-rotate="90" data-note="Street name for orientation"/>
+  <rect id="g-b2-wr" data-label="WR" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="270.8" y="101.6" width="12.7" height="12.1" data-label-x="278.5" data-label-y="108.2" data-rotate="0" data-note="Meaning of WR is not stated"/>
+  <rect id="g-b2-stage" data-label="Stage 2-110" data-kind="area" data-status="documented" data-building="2" data-level="1" x="283.5" y="101.6" width="36.6" height="12.1" data-label-x="299.5" data-label-y="108" data-rotate="0" data-lines="2" data-title="Stage (2-110)"/>
+  <rect id="g-b2-auditorium" data-label="Auditorium" data-kind="area" data-status="documented" data-building="2" data-level="1" x="273.7" y="113.7" width="46.3" height="39.3" data-label-x="297" data-label-y="134" data-rotate="0" data-title="Auditorium"/>
+  <rect id="g-b2-room-2134" data-label="2134 Dance" data-kind="room" data-status="documented" data-building="2" data-level="1" x="239.1" y="122.4" width="11.2" height="30.6" data-label-x="245" data-label-y="137.5" data-rotate="-90" data-lines="2" data-title="Room 2134 · Dance"/>
+  <rect id="g-b2-room-2135" data-label="2135" data-kind="room" data-status="documented" data-building="2" data-level="1" x="238.9" y="159" width="11.4" height="25.8" data-label-x="244.8" data-label-y="171" data-rotate="-90"/>
+  <rect id="g-b2-room-2132" data-label="2132" data-kind="room" data-status="documented" data-building="2" data-level="1" x="255" y="141.8" width="13" height="11.2" data-label-x="261" data-label-y="147.3" data-rotate="0"/>
+  <rect id="g-b2-room-2133" data-label="2133" data-kind="room" data-status="documented" data-building="2" data-level="1" x="255" y="159" width="10.8" height="11" data-label-x="260.5" data-label-y="163.7" data-rotate="0"/>
+  <rect id="g-b2-room-2131" data-label="2131" data-kind="room" data-status="documented" data-building="2" data-level="1" x="265.8" y="159" width="14.2" height="11" data-label-x="272.7" data-label-y="163.7" data-rotate="0"/>
+  <rect id="g-b2-room-2129" data-label="2129" data-kind="room" data-status="documented" data-building="2" data-level="1" x="280" y="159" width="14.5" height="11" data-label-x="287" data-label-y="163.7" data-rotate="0"/>
+  <rect id="g-b2-room-2125" data-label="2125" data-kind="room" data-status="documented" data-building="2" data-level="1" x="302.5" y="159" width="14.8" height="10.6" data-label-x="309.8" data-label-y="163.5" data-rotate="0"/>
+  <rect id="g-b2-room-2123" data-label="2123" data-kind="room" data-status="documented" data-building="2" data-level="1" x="317.3" y="159" width="14.7" height="10.6" data-label-x="324.7" data-label-y="163.5" data-rotate="0"/>
+  <rect id="g-b2-room-2117" data-label="2117" data-kind="room" data-status="documented" data-building="2" data-level="1" x="346" y="159" width="11" height="11.5" data-label-x="351.5" data-label-y="163" data-rotate="0"/>
+  <rect id="g-b2-room-2118" data-label="2118" data-kind="room" data-status="documented" data-building="2" data-level="1" x="346" y="170.5" width="11" height="13.5" data-label-x="351.5" data-label-y="177.8" data-rotate="0"/>
+  <rect id="g-b2-room-2113" data-label="2113 Band" data-kind="room" data-status="documented" data-building="2" data-level="1" x="320" y="122" width="21.5" height="19" data-label-x="331" data-label-y="131.5" data-rotate="0" data-lines="2" data-title="Room 2113 · Band"/>
+  <rect id="g-b2-room-2107" data-label="2107 Choir" data-kind="room" data-status="documented" data-building="2" data-level="1" x="328.6" y="102.7" width="23.4" height="14.3" data-label-x="339.7" data-label-y="110.5" data-rotate="0" data-lines="2" data-title="Room 2107 · Choir"/>
+  <rect id="g-b2-room-2101" data-label="2101 Drama" data-kind="room" data-status="documented" data-building="2" data-level="1" x="360" y="102.7" width="13.5" height="14.9" data-label-x="366.8" data-label-y="110.5" data-rotate="0" data-lines="2" data-title="Room 2101 · Drama"/>
+  <rect id="g-b2-off-1" data-label="OFF" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="352" y="102.7" width="8" height="7.3" data-label-x="356" data-label-y="106.2" data-rotate="0" data-note="Office? (label OFF)"/>
+  <rect id="g-b2-off-2" data-label="OFF" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="352" y="110" width="8" height="7.6" data-label-x="356" data-label-y="113.8" data-rotate="0" data-note="Office? (label OFF)"/>
+  <rect id="g-b2-room-2-108" data-label="2-108" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="324" y="103.5" width="4.6" height="14.1" data-label-x="326.2" data-label-y="110.5" data-rotate="-90" data-note="Label reads 2-108 or 2-109"/>
+  <rect id="g-b2-t-1" data-label="T" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="326.5" y="141" width="7.5" height="11.8" data-label-x="330.2" data-label-y="146.7" data-rotate="0" data-note="Label T, presumed restroom"/>
+  <rect id="g-b2-t-2" data-label="T" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="334" y="141" width="7.5" height="11.8" data-label-x="337.7" data-label-y="146.7" data-rotate="0" data-note="Label T, presumed restroom"/>
+  <rect id="g-b2-room-2-116" data-label="2-116" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="341.5" y="141" width="4.5" height="11.8" data-label-x="343.8" data-label-y="147" data-rotate="-90" data-note="Small vertical label 2-116"/>
+  <rect id="g-b2-elec" data-label="ELEC" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="346" y="141" width="4.5" height="11.8" data-label-x="348.2" data-label-y="147" data-rotate="-90" data-note="ELEC (electrical?)"/>
+  <rect id="g-b2-off-3" data-label="OFF" data-kind="room" data-status="uncertain" data-building="2" data-level="1" x="341.5" y="123" width="4.5" height="9" data-label-x="343.8" data-label-y="127.5" data-rotate="-90" data-note="Office? (label OFF)"/>
+  <rect id="g-b2-entrance-quad" data-label="Entrance from Quad" data-kind="context" data-status="documented" data-building="2" data-level="1" x="362" y="145" width="9" height="19" data-label-x="366.5" data-label-y="154" data-rotate="-90" data-lines="2" data-note="Printed label east of Building 2"/>
+  <rect id="g-b3-fl" data-label="FL" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="94.1" y="114.5" width="6.5" height="9" data-label-x="97.3" data-label-y="119.2" data-rotate="0" data-note="Label FL or EL; a 3-107 leader points to this corner"/>
+  <rect id="g-b3-st" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="94.1" y="123.5" width="6.5" height="8.3" data-label-x="97.3" data-label-y="127.6" data-rotate="0" data-note="Label ST (storage?)"/>
+  <rect id="g-b3-eq" data-label="EQ" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="100.6" y="114.5" width="6.7" height="17.3" data-label-x="103.8" data-label-y="121.8" data-rotate="0" data-note="Leader 3-108 appears to point here"/>
+  <rect id="g-b3-t-a" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="107.3" y="114.5" width="3.5" height="17.3" data-label-x="109" data-label-y="119.2" data-rotate="0" data-note="Label T, presumed restroom"/>
+  <rect id="g-b3-off-a" data-label="OFF" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="110.8" y="114.5" width="8.4" height="17.3" data-label-x="114.8" data-label-y="123.3" data-rotate="0" data-note="Leader 3-109 points below this room"/>
+  <rect id="g-b3-room-3-110a" data-label="3-110A Boys Locker" data-kind="room" data-status="documented" data-building="3" data-level="1" x="119.2" y="114.5" width="13.2" height="17.3" data-label-x="125.8" data-label-y="123" data-rotate="0" data-lines="2" data-title="Boys Locker Room (3-110A)"/>
+  <rect id="g-b3-t-b" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="132.4" y="114.5" width="10.1" height="10.5" data-label-x="137.2" data-label-y="119.2" data-rotate="0" data-note="Leader 3-112 appears to point here"/>
+  <rect id="g-b3-t-c" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="142.5" y="114.5" width="11.7" height="10.5" data-label-x="148.8" data-label-y="119.2" data-rotate="0" data-note="Label T, presumed restroom"/>
+  <rect id="g-b3-trn-1" data-label="TRN" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="132.4" y="125" width="9.6" height="6.6" data-label-x="137.4" data-label-y="128.2" data-rotate="0" data-note="Label TRN (training?)"/>
+  <rect id="g-b3-trn-2" data-label="TRN" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="145" y="125" width="9.2" height="6.6" data-label-x="149.4" data-label-y="128.2" data-rotate="0" data-note="Label TRN (training?)"/>
+  <rect id="g-b3-girls-locker" data-label="3-313 Girls Locker" data-kind="room" data-status="documented" data-building="3" data-level="1" x="154.2" y="114.5" width="14.5" height="17.1" data-label-x="161.5" data-label-y="123" data-rotate="0" data-lines="2" data-title="Girls Locker Room" data-note="Number printed as 3-313 (possibly 3-113)"/>
+  <rect id="g-b3-off-b" data-label="OFF" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="168.7" y="114.5" width="7.9" height="13.5" data-label-x="172.6" data-label-y="121.5" data-rotate="0" data-note="Leader 3-115 points here"/>
+  <rect id="g-b3-garage" data-label="Serv. Car Garage" data-kind="room" data-status="documented" data-building="3" data-level="1" x="176.6" y="114.5" width="19.7" height="14.7" data-label-x="186.8" data-label-y="123.5" data-rotate="0" data-lines="2" data-title="Serv. Car Garage"/>
+  <rect id="g-b3-building-3" data-label="Building 3" data-kind="building" data-status="documented" data-building="3" data-level="1" x="60.2" y="114.5" width="168.8" height="74.9" data-label-x="144.6" data-label-y="154.5" data-rotate="0" data-title="Building 3" data-note="Printed in the PDF at page px (1490, 3445); centred on the building for the zoomed-out name"/>
+  <rect id="g-b3-gym-3-101" data-label="Gymnasium 3-101" data-kind="area" data-status="documented" data-building="3" data-level="1" x="94.1" y="160" width="42.7" height="23" data-label-x="116.5" data-label-y="169.5" data-rotate="0" data-lines="2" data-title="Gymnasium (3-101)"/>
+  <rect id="g-b3-gym-3-102" data-label="Gymnasium 3-102" data-kind="area" data-status="documented" data-building="3" data-level="1" x="136.8" y="160" width="39.9" height="23" data-label-x="157.2" data-label-y="169" data-rotate="0" data-lines="2" data-title="Gymnasium (3-102)"/>
+  <rect id="g-b3-lobby" data-label="Lobby" data-kind="area" data-status="documented" data-building="3" data-level="1" x="105" y="183" width="42" height="6.4" data-label-x="126.5" data-label-y="186.2" data-rotate="0" data-title="Building 3 Lobby"/>
+  <rect id="g-b3-t-d" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="147" y="183" width="18.5" height="6.4" data-label-x="156.3" data-label-y="186.2" data-rotate="0" data-note="Label T, presumed restroom"/>
+  <rect id="g-b3-pool" data-label="Outdoor Swimming Pool" data-kind="area" data-status="documented" data-building="3" data-level="1" x="176.7" y="136.6" width="49.4" height="44.8" data-label-x="202" data-label-y="159" data-rotate="0" data-lines="2" data-title="Outdoor Swimming Pool"/>
+  <rect id="g-b3-room-3-122" data-label="3-122" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="226.1" y="152" width="4.4" height="8" data-label-x="228.3" data-label-y="156" data-rotate="-90" data-note="Leader labels 3-122 and 3-123 point to the pool east side"/>
+  <rect id="g-b3-room-3-124" data-label="3-124" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="226.1" y="166" width="4.4" height="7" data-label-x="228.3" data-label-y="169.5" data-rotate="-90" data-note="Leader label"/>
+  <rect id="g-b3-room-3-125" data-label="3-125" data-kind="room" data-status="uncertain" data-building="3" data-level="1" x="226.1" y="173.5" width="4.4" height="7" data-label-x="228.3" data-label-y="177" data-rotate="-90" data-note="Leader label"/>
+  <rect id="g-b3-basement" data-label="Basement Area" data-kind="area" data-status="uncertain" data-building="3" data-level="1" x="67.7" y="148" width="16.1" height="26" data-label-x="75.7" data-label-y="163.5" data-rotate="0" data-lines="2" data-note="Labeled (BASEMENT AREA); may not be at ground level"/>
+  <rect id="g-b3-tennis" data-label="Tennis Courts" data-kind="area" data-status="documented" data-building="3" data-level="1" x="8" y="160" width="36" height="12.5" data-label-x="25" data-label-y="166.5" data-rotate="0" data-lines="2" data-title="Tennis Courts" data-note="Label only; the courts are not outlined"/>
+  <rect id="g-b3-garage-below" data-label="Parking Garage Below" data-kind="area" data-status="documented" data-building="3" data-level="1" x="8" y="173" width="36" height="12" data-label-x="25" data-label-y="179" data-rotate="0" data-lines="2" data-title="Parking garage (below the tennis courts)" data-note="Printed label; garage outline not drawn"/>
+  <rect id="g-ramp" data-label="Ramp" data-kind="context" data-status="documented" data-building="1" data-level="1" x="382" y="66" width="30" height="9" data-label-x="397" data-label-y="71.5" data-rotate="0" data-note="Ramp toward Building 1 Floor 2; connection proposed"/>
+  <rect data-max-level="0" id="g-building-1" data-label="Building 1" data-kind="building" data-status="documented" data-building="1" data-level="1" x="404" y="97.5" width="169" height="102.5" data-label-x="488" data-label-y="145" data-rotate="0" data-title="Building 1" data-note="Name from the user; not printed in the PDF"/>
+  <rect data-max-level="0" id="g-building-2" data-label="Building 2" data-kind="building" data-status="documented" data-building="2" data-level="1" x="238.9" y="101.6" width="137.8" height="83.7" data-label-x="307.8" data-label-y="140" data-rotate="0" data-title="Building 2" data-note="Name from the user; not printed in the PDF"/>
+</g>
+<g id="route-candidates">
+  <circle cx="436" cy="125.4" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair symbol near the Cafeteria"/>
+  <circle cx="525.2" cy="126.5" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair symbol north of the Career Center"/>
+  <circle cx="468" cy="160" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair symbol on the south side of the Quad"/>
+  <circle cx="521" cy="137.2" r="1" data-type="elevator" data-building="1" data-status="uncertain" data-note="Room labeled ELEV. M. (elevator or machine room)"/>
+  <circle cx="270.8" cy="147.5" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR west of the auditorium"/>
+  <circle cx="323.2" cy="147" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR east of the auditorium"/>
+  <circle cx="258.7" cy="180.2" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR south side"/>
+  <circle cx="337.7" cy="179.5" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR south-east"/>
+  <circle cx="298" cy="179" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="Hatched stair at south entrance"/>
+  <circle cx="357" cy="155" r="1" data-type="entrance" data-building="2" data-status="uncertain" data-note="Printed 'Entrance from Quad'"/>
+  <circle cx="242.7" cy="188.7" r="1" data-type="exit" data-building="2" data-status="uncertain" data-note="Exit pictogram"/>
+  <circle cx="301.5" cy="197.2" r="1" data-type="exit" data-building="2" data-status="uncertain" data-note="Exit pictogram"/>
+  <circle cx="91.7" cy="124.5" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="Hatched stair west of the locker row"/>
+  <circle cx="143.5" cy="128" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="STR in the locker row"/>
+  <circle cx="206" cy="116" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="Exterior STR, north-east"/>
+  <circle cx="194" cy="116" r="1" data-type="elevator" data-building="3" data-status="uncertain" data-note="ELEV. leader, north-east corner"/>
+  <circle cx="66.1" cy="153.7" r="1" data-type="elevator" data-building="3" data-status="uncertain" data-note="ELEV. leader, basement side"/>
+  <circle cx="62.2" cy="148.7" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="STR, basement side"/>
+  <circle cx="74" cy="189.2" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="STR south of basement area"/>
+  <circle cx="119.2" cy="197.5" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="STR south of lobby"/>
+  <circle cx="151.5" cy="196.5" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="STR south of lobby"/>
+  <circle cx="181.5" cy="188.5" r="1" data-type="exit" data-building="3" data-status="uncertain" data-note="Exit pictogram"/>
+</g>
+</svg>

@@ -1,44 +1,28 @@
 import { memo } from 'react';
-import Svg, { G, Path, type PathProps } from 'react-native-svg';
-import Animated, { useAnimatedProps, useAnimatedReaction, useSharedValue, withTiming,
-  type SharedValue } from 'react-native-reanimated';
+import { G, Path } from 'react-native-svg';
 
 import map from '../../2026-10-04_floor2-labeled.svg';
-import { DETAIL_FADE_MS, type DetailLevel } from './detailPolicy';
+import type { DetailLevel } from './detailPolicy';
+import type { MapPlacement } from './placement';
 
-const AnimatedGroup = Animated.createAnimatedComponent(G);
-function DetailWalls({ minimum, path, detail }: {
-  minimum: DetailLevel;
-  path: PathProps;
-  detail: SharedValue<DetailLevel>;
-}) {
-  const opacity = useSharedValue(0);
-  useAnimatedReaction(() => detail.value, (level, previous) => {
-    if (level !== previous) opacity.value = withTiming(level >= minimum ? 1 : 0,
-      { duration: DETAIL_FADE_MS });
-  });
-  const animatedProps = useAnimatedProps(() => ({ opacity: opacity.value }));
-  return (
-    <AnimatedGroup opacity={0} animatedProps={animatedProps}>
-      <Path {...path} fill="#788791" stroke="#788791" strokeWidth={0.12} />
-    </AnimatedGroup>
-  );
-}
+const WALL = '#788791';
+// Walls are thin filled outlines in the export. A thin screen-space stroke
+// keeps them visible when the whole campus is zoomed out.
+const EDGE = { stroke: WALL, strokeWidth: 0.8, vectorEffect: 'non-scaling-stroke' as const };
 
 export const MAP_SIZE = { width: map.width, height: map.height };
 
-export default memo(function LabeledMap({ width, height, detail }: {
-  width: number;
-  height: number;
-  detail: SharedValue<DetailLevel>;
-}) {
+// Building 1 Floor 2 geometry from the flat export, drawn inside the campus
+// frame at `placement`. Room dividers and fine partitions appear with detail.
+export default memo(function Floor2Layers({ placement, detail }: { placement: MapPlacement; detail: DetailLevel }) {
+  const { scale, x, y } = placement;
   return (
-    <Svg width={width} height={height} viewBox={map.viewBox} fill={map.fill}>
-      <Path {...map.base} fill="#f8fafc" />
-      <Path {...map.structure.major} fill="#788791" stroke="#788791" strokeWidth={0.12} />
-      <DetailWalls minimum={1} path={map.structure.partitions} detail={detail} />
-      <DetailWalls minimum={2} path={map.structure.fine} detail={detail} />
-      <Path {...map.border} fill="#788791" />
-    </Svg>
+    <G transform={`translate(${x} ${y}) scale(${scale})`}>
+      {/* The export's base rectangle and border marks frame its canvas, not the
+          building, so they are not drawn inside the campus. */}
+      <Path {...map.structure.major} fill={WALL} {...EDGE} />
+      {detail >= 1 ? <Path {...map.structure.partitions} fill={WALL} {...EDGE} /> : null}
+      {detail >= 2 ? <Path {...map.structure.fine} fill={WALL} {...EDGE} /> : null}
+    </G>
   );
 });

@@ -2,6 +2,10 @@
 
 ## Status — Open (2026-10-07)
 
+**2026-10-21 note:** map geometry is now drawn as vectors through a camera
+matrix (like the labels), instead of a bitmap scaled by a View transform.
+Re-baseline Android with the new build before using the measurements below.
+
 The user reports that the map still slows down after the two-finger rotation
 and gesture-path changes. This issue has not been fixed or diagnosed on a device.
 

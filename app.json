@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "map-project",
-    "slug": "map-project",
+    "name": "Bell Space",
+    "slug": "bell-space",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,6 +19,33 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Bell Space uses your location only while the app is open and live location is switched on, to show where you are on the campus map.",
+          "motionUsagePermission": "Bell Space uses motion data to count steps between location readings while live location is on.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "locationFullAccuracyPermission": "Bell Space needs precise location only while live location is switched on, to place you on the campus map."
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Bell Space uses motion data to count steps between location readings while live location is on."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Bell Space lets school editors choose a photo for an update.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ],
+      "expo-status-bar"
+    ]
   }
 }

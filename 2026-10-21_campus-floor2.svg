@@ -1,0 +1,134 @@
+<svg width="580" height="210" viewBox="0 0 580 210" fill="none" xmlns="http://www.w3.org/2000/svg" data-floor="2" data-coverage="partial" data-frame="campus">
+<!-- CLEAR 2.0 campus map, Floor 2: Building 2 (22xx) and Building 3 (3-2xx) upper floors placed over their buildings. Building 1 Floor 2 comes from 2026-10-04_floor2-labeled.svg and is placed in code (see src/map/campus.ts).
+     Source: BHSCampusMap.pdf (2023 scan), 6000 px render straightened by 1.005 degrees.
+     Campus frame: 1 unit = 10 px of that render; origin at render px (120, 1900). No real-world scale.
+     data-status="documented": drawn and legible in the source. "uncertain": needs an in-person check.
+     Upper floors are placed by estimated transforms; see CAMPUS_MAP.md for alignment notes.
+     stairs: one path per stair symbol in the PDF (never merged). route-candidates are unverified
+     stairs, elevators and entrances. The ramp is not drawn until its proposal is reviewed. They are
+     not a route network. No doors or walkways are traced. -->
+<g id="footprint" data-status="documented" fill="#ffffff">
+  <path d="M271.7 101.6 L319.5 101.6 L319.5 141.3 L355.4 141.3 L355.4 183.3 L344.8 183.3 L344.8 182.1 L333.6 182.1 L333.6 176.7 L336.9 176.7 L336.9 169.4 L255.9 169.4 L255.9 176.9 L262.8 176.9 L262.8 182.3 L251.4 182.3 L251.4 183.8 L240.3 183.8 L240.3 152.7 L255.9 152.7 L255.9 141.3 L274.2 141.3 L274.2 114.6 L271.7 114.6 Z" data-note="Building 2 Floor 2"/>
+  <path d="M72.5 114.5 L189.1 114.5 L189.1 126.9 L196.3 126.9 L196.3 146.1 L72.5 146.1 Z" data-note="Building 3 Floor 2"/>
+</g>
+<g id="open-areas" data-status="documented" fill="#e8f3e3">
+</g>
+<g id="covered-areas" data-status="documented" fill="#f1ead8">
+</g>
+<g id="hills" data-status="documented" fill="#d3e9c8" stroke="#6b9e5a" stroke-width="0.3" stroke-dasharray="1 0.8">
+</g>
+<g id="site" data-status="documented" stroke="#b8c2cb" stroke-width="0.3">
+</g>
+<g id="walls" data-status="documented" stroke="#788791" stroke-width="0.5" stroke-linejoin="round">
+  <path d="M271.7 101.6 L319.5 101.6 L319.5 141.3 L355.4 141.3 L355.4 183.3 L344.8 183.3 L344.8 182.1 L333.6 182.1 L333.6 176.7 L336.9 176.7 L336.9 169.4 L255.9 169.4 L255.9 176.9 L262.8 176.9 L262.8 182.3 L251.4 182.3 L251.4 183.8 L240.3 183.8 L240.3 152.7 L255.9 152.7 L255.9 141.3 L274.2 141.3 L274.2 114.6 L271.7 114.6 Z" data-note="Building 2 Floor 2"/>
+  <path d="M72.5 114.5 L189.1 114.5 L189.1 126.9 L196.3 126.9 L196.3 146.1 L72.5 146.1 Z" data-note="Building 3 Floor 2"/>
+  <path d="M73.2 124 L188.2 124" data-note="Building 3 Floor 2"/>
+  <path d="M73.2 127.8 L196.3 127.8" data-note="Building 3 Floor 2"/>
+</g>
+<g id="dividers" data-status="documented" stroke="#788791" stroke-width="0.3" stroke-dasharray="1.2 0.8">
+  <path d="M274.2 152.4 L319.5 152.4" data-note="Building 2 Floor 2"/>
+  <path d="M267.7 141.3 L267.7 152.4" data-note="Building 2 Floor 2"/>
+  <path d="M325.7 141.3 L325.7 151.9" data-note="Building 2 Floor 2"/>
+  <path d="M337.7 141.3 L337.7 151.9" data-note="Building 2 Floor 2"/>
+  <path d="M255.9 157.9 L340.7 157.9" data-note="Building 2 Floor 2"/>
+  <path d="M340.7 157.9 L340.7 169.4" data-note="Building 2 Floor 2"/>
+  <path d="M344.7 151.9 L344.7 182.1" data-note="Building 2 Floor 2"/>
+  <path d="M251.7 152.7 L251.7 176.9" data-note="Building 2 Floor 2"/>
+  <path d="M240.3 166.9 L251.7 166.9" data-note="Building 2 Floor 2"/>
+  <path d="M271.7 157.9 L271.7 169.4" data-note="Building 2 Floor 2"/>
+  <path d="M287.7 157.9 L287.7 169.4" data-note="Building 2 Floor 2"/>
+  <path d="M307.9 157.9 L307.9 169.4" data-note="Building 2 Floor 2"/>
+  <path d="M324.7 157.9 L324.7 169.4" data-note="Building 2 Floor 2"/>
+  <path d="M95 114.5 L95 124" data-note="Building 3 Floor 2"/>
+  <path d="M117 114.5 L117 124" data-note="Building 3 Floor 2"/>
+  <path d="M126.7 114.5 L126.7 124" data-note="Building 3 Floor 2"/>
+  <path d="M143.6 114.5 L143.6 124" data-note="Building 3 Floor 2"/>
+  <path d="M167 114.5 L167 124" data-note="Building 3 Floor 2"/>
+  <path d="M178.4 114.5 L178.4 124" data-note="Building 3 Floor 2"/>
+  <path d="M131 114.5 L131 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M85.9 127.8 L85.9 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M99.5 127.8 L99.5 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M113.2 127.8 L113.2 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M126.8 127.8 L126.8 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M146 127.8 L146 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M164.1 127.8 L164.1 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M179.6 127.8 L179.6 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M146 133.9 L164.1 133.9" data-note="Building 3 Floor 2"/>
+  <path d="M152 127.8 L152 133.9" data-note="Building 3 Floor 2"/>
+  <path d="M158 127.8 L158 133.9" data-note="Building 3 Floor 2"/>
+  <path d="M155 133.9 L155 146.1" data-note="Building 3 Floor 2"/>
+  <path d="M179.6 136.6 L187.8 136.6" data-note="Building 3 Floor 2"/>
+  <path d="M187.8 127.8 L187.8 136.6" data-note="Building 3 Floor 2"/>
+</g>
+<g id="uncertain-lines" data-status="uncertain" stroke="#a7b1b9" stroke-width="0.3" stroke-dasharray="0.8 1">
+</g>
+<g id="uncertain-symbols" data-status="uncertain" stroke="#a7b1b9" stroke-width="0.3">
+  <path d="M184.2 117.3 L188.2 117.3 L188.2 120.8 L184.2 120.8 Z M184.2 117.3 L188.2 120.8 M188.2 117.3 L184.2 120.8" data-note="Elevator? The 3-204 and ELEV. leaders point here"/>
+</g>
+<g id="ramp" data-status="documented" fill="#ede3fb" stroke="#7c3aed" stroke-width="0.3">
+</g>
+<g id="ramp-marks" data-status="documented" stroke="#7c3aed" stroke-width="0.3">
+</g>
+<g id="stairs" data-status="uncertain" fill="#d7f0ea" stroke="#0f766e" stroke-width="0.3">
+  <path id="stair-2-1" d="M493.6 29.8 L500.8 29.8 L500.8 40.6 L493.6 40.6 Z M493.6 32.5 L500.8 32.5 M493.6 35.2 L500.8 35.2 M493.6 37.9 L500.8 37.9" data-building="1" data-cx="497.2" data-cy="35.2" data-note="Hatched stair in the Small Quad"/>
+  <path id="stair-2-2" d="M453.3 64.4 L461.2 64.4 L461.2 73 L453.3 73 Z M453.3 66.6 L461.2 66.6 M453.3 68.7 L461.2 68.7 M453.3 70.9 L461.2 70.9" data-building="1" data-cx="457.3" data-cy="68.7" data-note="Hatched stair west of 1229"/>
+  <path id="stair-2-3" d="M432.4 117.7 L439.6 117.7 L439.6 129.2 L432.4 129.2 Z M432.4 120.6 L439.6 120.6 M432.4 123.4 L439.6 123.4 M432.4 126.3 L439.6 126.3" data-building="1" data-cx="436" data-cy="123.4" data-note="Hatched stair, south-west wing"/>
+  <path id="stair-2-4" d="M519.6 121 L530.4 121 L530.4 129.2 L519.6 129.2 Z M522.3 121 L522.3 129.2 M525 121 L525 129.2 M527.7 121 L527.7 129.2" data-building="1" data-cx="525" data-cy="125.1" data-note="Hatched stair north of the Teacher Workroom"/>
+  <path id="stair-2-5" d="M459.1 156.1 L472.8 156.1 L472.8 161.6 L459.1 161.6 Z M462.5 156.1 L462.5 161.6 M465.9 156.1 L465.9 161.6 M469.3 156.1 L469.3 161.6" data-building="1" data-cx="465.9" data-cy="158.9" data-note="Hatched stair north of 1203"/>
+  <path id="stair-2-6" d="M504.4 22.6 L511.6 22.6 L511.6 25.5 L504.4 25.5 Z M506.2 22.6 L506.2 25.5 M508 22.6 L508 25.5 M509.8 22.6 L509.8 25.5" data-building="1" data-cx="508" data-cy="24.1" data-note="PDF label STR beside the STEAM Lab"/>
+  <path id="stair-2-7" d="M267.7 141.3 L274.2 141.3 L274.2 152.4 L267.7 152.4 Z M267.7 144.1 L274.2 144.1 M267.7 146.8 L274.2 146.8 M267.7 149.6 L274.2 149.6" data-building="2" data-cx="270.9" data-cy="146.8" data-note="PDF label STR"/>
+  <path id="stair-2-8" d="M319.5 141.3 L325.7 141.3 L325.7 152.4 L319.5 152.4 Z M319.5 144.1 L325.7 144.1 M319.5 146.8 L325.7 146.8 M319.5 149.6 L325.7 149.6" data-building="2" data-cx="322.6" data-cy="146.8" data-note="PDF label STR"/>
+  <path id="stair-2-9" d="M254.7 176.9 L263.2 176.9 L263.2 182.3 L254.7 182.3 Z M256.8 176.9 L256.8 182.3 M258.9 176.9 L258.9 182.3 M261.1 176.9 L261.1 182.3" data-building="2" data-cx="258.9" data-cy="179.6" data-note="PDF label STR"/>
+  <path id="stair-2-10" d="M333.2 176.7 L341.7 176.7 L341.7 182.1 L333.2 182.1 Z M335.3 176.7 L335.3 182.1 M337.4 176.7 L337.4 182.1 M339.6 176.7 L339.6 182.1" data-building="2" data-cx="337.4" data-cy="179.4" data-note="PDF label STR"/>
+  <path id="stair-2-11" d="M126.8 127.8 L131 127.8 L131 139.3 L126.8 139.3 Z M126.8 130.7 L131 130.7 M126.8 133.6 L131 133.6 M126.8 136.4 L131 136.4" data-building="3" data-cx="128.9" data-cy="133.6" data-note="PDF label STR"/>
+</g>
+<g id="labels">
+  <rect id="f2-b2-auditorium" data-label="Auditorium" data-kind="area" data-status="documented" data-building="2" data-level="2" x="274.2" y="101.6" width="45.3" height="50.8" data-label-x="297.2" data-label-y="127.4" data-rotate="0" data-title="Auditorium (upper level)" data-note="The 22xx plan includes the auditorium; it spans both levels"/>
+  <rect id="f2-b2-room-2218" data-label="2218" data-kind="room" data-status="documented" data-building="2" data-level="2" x="255.9" y="141.3" width="11.8" height="11.1" data-label-x="261.9" data-label-y="146.9" data-rotate="0"/>
+  <rect id="f2-b2-room-2206" data-label="2206" data-kind="room" data-status="documented" data-building="2" data-level="2" x="325.7" y="141.3" width="12" height="11.1" data-label-x="331.7" data-label-y="146.9" data-rotate="0"/>
+  <rect id="f2-b2-room-2215" data-label="2215" data-kind="room" data-status="uncertain" data-building="2" data-level="2" x="255.9" y="157.9" width="15.8" height="11.5" data-label-x="264" data-label-y="163.4" data-rotate="0" data-note="2215 is printed twice on this plan; one may be a misprint"/>
+  <rect id="f2-b2-room-2213" data-label="2213" data-kind="room" data-status="documented" data-building="2" data-level="2" x="271.7" y="157.9" width="16" height="11.5" data-label-x="279.7" data-label-y="163.4" data-rotate="0"/>
+  <rect id="f2-b2-room-2209" data-label="2209" data-kind="room" data-status="documented" data-building="2" data-level="2" x="287.7" y="157.9" width="20.2" height="11.5" data-label-x="295.7" data-label-y="162.9" data-rotate="0"/>
+  <rect id="f2-b2-room-2207" data-label="2207" data-kind="room" data-status="documented" data-building="2" data-level="2" x="307.9" y="157.9" width="16.8" height="11.5" data-label-x="316.2" data-label-y="162.9" data-rotate="0"/>
+  <rect id="f2-b2-room-2205" data-label="2205" data-kind="room" data-status="documented" data-building="2" data-level="2" x="324.7" y="157.9" width="16" height="11.5" data-label-x="332.7" data-label-y="162.7" data-rotate="0"/>
+  <rect id="f2-b2-room-2202" data-label="2202" data-kind="room" data-status="documented" data-building="2" data-level="2" x="344.7" y="141.3" width="10.7" height="42" data-label-x="350.2" data-label-y="166.9" data-rotate="-90"/>
+  <rect id="f2-b2-room-2215-west" data-label="2215" data-kind="room" data-status="uncertain" data-building="2" data-level="2" x="240.3" y="152.7" width="11.4" height="14.2" data-label-x="245.7" data-label-y="159.9" data-rotate="-90" data-note="2215 is printed twice on this plan; one may be a misprint"/>
+  <rect id="f2-b2-room-2217" data-label="2217" data-kind="room" data-status="documented" data-building="2" data-level="2" x="240.3" y="166.9" width="11.4" height="16.9" data-label-x="246" data-label-y="176.9" data-rotate="-90"/>
+  <rect id="f2-b3-st-0" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="73.2" y="114.5" width="21.8" height="9.5" data-label-x="84.1" data-label-y="119.3" data-rotate="0" data-note="Label ST (storage?)"/>
+  <rect id="f2-b3-st-1" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="95" y="114.5" width="22" height="9.5" data-label-x="106" data-label-y="119.3" data-rotate="0" data-note="Label ST (storage?)"/>
+  <rect id="f2-b3-st-2" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="117" y="114.5" width="9.7" height="9.5" data-label-x="121.8" data-label-y="119.3" data-rotate="0" data-note="Label ST (storage?)"/>
+  <rect id="f2-b3-st-3" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="131" y="114.5" width="12.6" height="9.5" data-label-x="137.3" data-label-y="119.3" data-rotate="0" data-note="Label ST (storage?)"/>
+  <rect id="f2-b3-st-4" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="143.6" y="114.5" width="23.4" height="9.5" data-label-x="155.3" data-label-y="119.3" data-rotate="0" data-note="Label ST (storage?)"/>
+  <rect id="f2-b3-st-5" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="167" y="114.5" width="11.4" height="9.5" data-label-x="172.7" data-label-y="119.3" data-rotate="0" data-note="Label ST (storage?)"/>
+  <rect id="f2-b3-room-3-217" data-label="3-217 CR" data-kind="room" data-status="documented" data-building="3" data-level="2" x="72.5" y="127.8" width="13.4" height="18.3" data-label-x="79.2" data-label-y="136.8" data-rotate="0" data-lines="2" data-title="Room 3-217 (CR)"/>
+  <rect id="f2-b3-room-3-215" data-label="3-215 CR" data-kind="room" data-status="documented" data-building="3" data-level="2" x="85.9" y="127.8" width="13.6" height="18.3" data-label-x="92.7" data-label-y="136.8" data-rotate="0" data-lines="2" data-title="Room 3-215 (CR)"/>
+  <rect id="f2-b3-wt-room-1" data-label="Wt. Room" data-kind="room" data-status="documented" data-building="3" data-level="2" x="99.5" y="127.8" width="13.7" height="18.3" data-label-x="106.4" data-label-y="137.8" data-rotate="0" data-lines="2" data-title="Wt. Room (west)"/>
+  <rect id="f2-b3-wt-room-2" data-label="Wt. Room" data-kind="room" data-status="documented" data-building="3" data-level="2" x="113.2" y="127.8" width="13.6" height="18.3" data-label-x="120" data-label-y="137.8" data-rotate="0" data-lines="2" data-title="Wt. Room (east)"/>
+  <rect id="f2-b3-room-3-209" data-label="3-209 Boys Team Room" data-kind="room" data-status="documented" data-building="3" data-level="2" x="131" y="127.8" width="15" height="18.3" data-label-x="138.5" data-label-y="136.8" data-rotate="0" data-lines="2" data-title="Boys Team Room (3-209)"/>
+  <rect id="f2-b3-t-e" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="146" y="127.8" width="6" height="6.1" data-label-x="149" data-label-y="130.8" data-rotate="0" data-note="Label T"/>
+  <rect id="f2-b3-t-f" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="152" y="127.8" width="6" height="6.1" data-label-x="155" data-label-y="130.8" data-rotate="0" data-note="Label T"/>
+  <rect id="f2-b3-st-7" data-label="ST" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="158" y="127.8" width="6.1" height="6.1" data-label-x="161" data-label-y="130.8" data-rotate="0" data-note="Label ST"/>
+  <rect id="f2-b3-t-g" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="146" y="133.9" width="9" height="12.2" data-label-x="150.5" data-label-y="140" data-rotate="0" data-note="Label T"/>
+  <rect id="f2-b3-t-h" data-label="T" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="155" y="133.9" width="9.1" height="12.2" data-label-x="159.5" data-label-y="140" data-rotate="0" data-note="Label T"/>
+  <rect id="f2-b3-girls-team-room" data-label="Girls Team Room" data-kind="room" data-status="documented" data-building="3" data-level="2" x="164.1" y="127.8" width="15.5" height="18.3" data-label-x="171.8" data-label-y="136.8" data-rotate="0" data-lines="2" data-title="Girls Team Room"/>
+  <rect id="f2-b3-off-c" data-label="OFF" data-kind="room" data-status="uncertain" data-building="3" data-level="2" x="179.6" y="127.8" width="8.2" height="8.8" data-label-x="183.7" data-label-y="132.3" data-rotate="0" data-note="Office? 3-202 leader nearby"/>
+  <rect id="f2-b3-room-3-201" data-label="3-201" data-kind="room" data-status="documented" data-building="3" data-level="2" x="179.6" y="136.6" width="16.7" height="9.5" data-label-x="188" data-label-y="141.3" data-rotate="0"/>
+  <rect data-max-level="0" id="f2-building-1" data-label="Building 1" data-kind="building" data-status="documented" data-building="1" data-level="2" x="428" y="2" width="145" height="193" data-label-x="500.5" data-label-y="110" data-rotate="0" data-title="Building 1" data-note="Name from the user"/>
+  <rect data-max-level="0" id="f2-building-2" data-label="Building 2" data-kind="building" data-status="documented" data-building="2" data-level="2" x="240" y="101.6" width="116" height="82.4" data-label-x="298" data-label-y="134" data-rotate="0" data-title="Building 2" data-note="Name from the user"/>
+  <rect data-max-level="0" id="f2-building-3" data-label="Building 3" data-kind="building" data-status="documented" data-building="3" data-level="2" x="72" y="114.5" width="124.5" height="32" data-label-x="134" data-label-y="132" data-rotate="0" data-title="Building 3" data-note="Name from the user"/>
+</g>
+<g id="route-candidates">
+  <circle cx="497.2" cy="35.2" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair in the Small Quad"/>
+  <circle cx="457.2" cy="68.7" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair west of 1229"/>
+  <circle cx="436" cy="123.4" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair, south-west wing"/>
+  <circle cx="524.9" cy="125" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair north of the Teacher Workroom"/>
+  <circle cx="465.8" cy="158.9" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="Hatched stair north of 1203"/>
+  <circle cx="508" cy="24.1" r="1" data-type="stair" data-building="1" data-status="uncertain" data-note="STR beside the STEAM Lab"/>
+  <circle cx="270.9" cy="146.9" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR"/>
+  <circle cx="322.6" cy="146.9" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR"/>
+  <circle cx="258.9" cy="179.6" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR"/>
+  <circle cx="337.4" cy="179.4" r="1" data-type="stair" data-building="2" data-status="uncertain" data-note="STR"/>
+  <circle cx="128.9" cy="133.5" r="1" data-type="stair" data-building="3" data-status="uncertain" data-note="STR"/>
+  <circle cx="186.2" cy="119" r="1" data-type="elevator" data-building="3" data-status="uncertain" data-note="3-204 / ELEV. leaders"/>
+</g>
+</svg>

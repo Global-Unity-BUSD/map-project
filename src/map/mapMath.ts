@@ -6,8 +6,8 @@ export function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value));
 }
 
-export function fitMap(width: number, height: number, mapWidth: number, mapHeight: number) {
-  const padding = Math.min(24, width / 10, height / 10);
+export function fitMap(width: number, height: number, mapWidth: number, mapHeight: number, maxPadding = 24) {
+  const padding = Math.min(maxPadding, width / 10, height / 10);
   const scale = Math.min((width - padding * 2) / mapWidth, (height - padding * 2) / mapHeight);
   return { width: mapWidth * scale, height: mapHeight * scale };
 }
@@ -85,8 +85,11 @@ export function rotatedSize(width: number, height: number, rotation: number) {
 // One camera update per touch event combines scale, twist, and translation.
 // Incremental rebasing makes reversing at a zoom/pan limit respond immediately.
 // Bounds take precedence over focal anchoring at the map's edges.
+// With `allowRotation` off, two fingers still pinch and translate, but twist is ignored.
+export type ZoomLimits = { min: number; max: number };
 export function moveCamera(camera: MapCamera, previous: TouchFrame | null, current: TouchFrame,
-  mapWidth: number, mapHeight: number, width: number, height: number): MapCamera {
+  mapWidth: number, mapHeight: number, width: number, height: number, allowRotation = true,
+  limits: ZoomLimits = { min: MIN_ZOOM, max: MAX_ZOOM }): MapCamera {
   'worklet';
   if (!previous || current.count > 2 || previous.count !== current.count
     || previous.firstId !== current.firstId || previous.secondId !== current.secondId) return camera;
@@ -95,8 +98,8 @@ export function moveCamera(camera: MapCamera, previous: TouchFrame | null, curre
   if (current.count === 2) {
     // Rebase near coincident fingers rather than dividing by a tiny distance.
     if (previous.distance < 2 || current.distance < 2) return camera;
-    zoom = clamp(camera.zoom * current.distance / previous.distance, MIN_ZOOM, MAX_ZOOM);
-    delta = normalizeAngle(current.angle - previous.angle);
+    zoom = clamp(camera.zoom * current.distance / previous.distance, limits.min, limits.max);
+    delta = allowRotation ? normalizeAngle(current.angle - previous.angle) : 0;
   }
   const ratio = zoom / camera.zoom;
   const c = Math.cos(delta);

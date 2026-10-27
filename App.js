@@ -1,33 +1,79 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import InteractiveMap from './src/map/InteractiveMap';
+import { AuthProvider } from './src/backend/auth';
+import { useLiveTracking } from './src/positioning/useLiveTracking';
+import ChatScreen from './src/screens/ChatScreen';
+import NavigationScreen from './src/screens/NavigationScreen';
+import QAScreen from './src/screens/QAScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import UpdatesScreen from './src/screens/UpdatesScreen';
+import ErrorBoundary from './src/ui/ErrorBoundary';
+import TabBar from './src/ui/TabBar';
+import { colors, space, type } from './src/ui/theme';
 
 export default function App() {
+  // No welcome or sign-in screen: the app opens on Navigation.
+  const [tab, setTab] = useState(/** @type {import('./src/ui/TabBar').TabId} */ ('navigation'));
+  // Developer tools (hidden in Settings): map review shows proposed
+  // (unchecked) routes; live location is off until switched on there, which
+  // is also when location and motion permission are first requested.
+  const [devUnlocked, setDevUnlocked] = useState(false);
+  const [review, setReview] = useState(false);
+  const [liveOn, setLiveOn] = useState(false);
+  const [liveTest, setLiveTest] = useState(false);
+  const live = useLiveTracking(liveOn);
+  // Hiding the developer tools also switches them off.
+  const setDev = (/** @type {boolean} */ on) => {
+    setDevUnlocked(on);
+    if (!on) { setLiveOn(false); setLiveTest(false); setReview(false); }
+  };
   return (
-    <GestureHandlerRootView style={styles.container}>
-      <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
-          <View style={styles.header}>
-            <Text style={styles.title}>Sample map · Floor 2</Text>
-            <Text style={styles.hint}>Two fingers to zoom & rotate · Drag to pan</Text>
-          </View>
-          <InteractiveMap />
-          <StatusBar style="dark" />
-        </SafeAreaView>
-      </SafeAreaProvider>
+    <GestureHandlerRootView style={styles.root}>
+      <AuthProvider>
+        <SafeAreaProvider>
+          <SafeAreaView style={styles.root} edges={['top', 'left', 'right']}>
+            <View style={styles.header}>
+              <Text style={styles.brand} accessibilityRole="header">Bell Space</Text>
+              <Text style={styles.school}>Burbank High School</Text>
+            </View>
+            <View style={styles.body}>
+              {/* Navigation stays mounted so the map keeps its position between tabs. */}
+              <View style={[styles.body, tab !== 'navigation' && styles.hidden]}>
+                <NavigationScreen review={review} live={liveOn ? live : null} liveTest={liveTest} />
+              </View>
+              {/* Chat and Updates also stay mounted, so replies and new updates keep arriving. */}
+              <View style={[styles.body, tab !== 'chat' && styles.hidden]}><ErrorBoundary name="Chat"><ChatScreen /></ErrorBoundary></View>
+              <View style={[styles.body, tab !== 'updates' && styles.hidden]}><ErrorBoundary name="Updates"><UpdatesScreen active={tab === 'updates'} /></ErrorBoundary></View>
+              {tab === 'settings' && (
+                <SettingsScreen dev={{
+                  unlocked: devUnlocked, setUnlocked: setDev,
+                  liveOn, onLiveChange: setLiveOn, liveTest, onLiveTestChange: setLiveTest,
+                  liveStatus: liveOn ? live.status : 'off', review, onReviewChange: setReview,
+                }} />
+              )}
+              {tab === 'qa' && <QAScreen onOpenTab={setTab} />}
+            </View>
+            <TabBar active={tab} onChange={setTab} />
+            <StatusBar style="dark" />
+          </SafeAreaView>
+        </SafeAreaProvider>
+      </AuthProvider>
     </GestureHandlerRootView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  root: { flex: 1, backgroundColor: colors.surface },
+  header: {
+    paddingHorizontal: space.xl, paddingTop: space.xs, paddingBottom: space.md,
+    borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: colors.border,
   },
-  header: { paddingHorizontal: 20, paddingVertical: 16 },
-  title: { fontSize: 20, fontWeight: '700', color: '#24364b' },
-  hint: { marginTop: 4, fontSize: 14, color: '#596779' },
+  brand: { ...type.brand },
+  school: { fontSize: 16, fontWeight: '500', color: colors.text, marginTop: 1 },
+  body: { flex: 1 },
+  hidden: { display: 'none' },
 });
